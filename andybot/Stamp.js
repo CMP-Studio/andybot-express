@@ -2,12 +2,13 @@ const db = require("../db");
 const tableName = "stamp";
 const _ = require("lodash");
 const stamps = require("./activities.json").stamps;
+const utils = require("../utils");
 module.exports = {
 
 
     grant: async (pageId, stampId) => {
         const requestedStamp = _.find(stamps, (s) => s.stamp_id === stampId);
-        if (isNull(requestedStamp)) {
+        if (utils.isNull(requestedStamp)) {
             throw new Error("NoSuchStamp");
         }
 
