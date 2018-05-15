@@ -1,16 +1,13 @@
 const express = require('express');
 const app = express();
-
+const cors = require('cors')
+const bodyParser = require('body-parser');
 const morgan = require('morgan')
-
 
 const User = require("./andybot/User");
 const Scan = require("./andybot/Scan");
 
-
-
-var bodyParser = require('body-parser');
-
+app.use(cors())
 app.use(bodyParser.json());
 app.use(morgan('combined'));
 
