@@ -1,0 +1,610 @@
+{
+
+    "stamps": [
+        {
+            "stamp_id": "stamp-checkin-oakland",
+            "name": "Check-in at Oakland",
+            "events": [],
+            "image": "stamp-checkin-oakland.png",
+            "splash_image": "andy-stamp-checkinoakland.png",
+            "multiple": true
+        },
+        {
+            "stamp_id": "stamp-checkin-csc",
+            "name": "Check-in at Science Center",
+            "events": [],
+            "image": "stamp-checkin-csc.png",
+            "splash_image": "andy-stamp-checkincsc.png",
+            "multiple": true
+        },
+        {
+            "stamp_id": "stamp-checkin-warhol",
+            "name": "Check-in at Warhol",
+            "events": [],
+            "image": "stamp-checkin-warhol.png",
+            "splash_image": "andy-stamp-checkinwarhol.png",
+            "multiple": true
+        },
+        {
+            "stamp_id": "stamp-checkin-powdermill",
+            "name": "Check-in at Powdermill",
+            "events": [],
+            "image": "stamp-checkin-powdermill.png",
+            "splash_image": "andy-stamp-checkin-powdermill.png",
+            "multiple": true
+        },
+        {
+            "stamp_id": "stamp-wentdigital",
+            "name": "Went Digital",
+            "events": [],
+            "image": "stamp-wentdigital.png",
+            "splash_image": "andy-stamp-wentdigital.png",
+            "multiple": false
+        },
+        {
+            "stamp_id": "stamp-event-grandopening",
+            "name": "PPG Grand Opening and Art of The Brick",
+            "events": [
+                "event-grandopening"
+            ],
+            "image": "stamp-event-grandopening.png",
+            "splash_image": "andy-stamp-ppg.png",
+            "multiple": false
+        },
+        {
+            "stamp_id": "stamp-event-starfestival",
+            "name": "Star Festival",
+            "events": [
+                "event-starfestival"
+            ],
+            "image": "stamp-event-starfestival.png",
+            "splash_image": "andy-stamp-starfestival.png",
+            "multiple": false
+        },
+        {
+            "stamp_id": "stamp-event-fashion",
+            "name": "Evening of Fashion",
+            "events": [
+                "event-fashion"
+            ],
+            "image": "stamp-event-fashion.png",
+            "splash_image": "andy-stamp-fashion.png",
+            "multiple": false
+        },
+        {
+            "stamp_id": "stamp-event-icecream",
+            "name": "Ice Cream Social",
+            "events": [
+                "event-icecream"
+            ],
+            "image": "stamp-event-icecream.png",
+            "splash_image": "andy-stamp-icecream.png",
+            "multiple": false
+        },
+        {
+            "stamp_id": "stamp-event-birthday",
+            "name": "Andy's Birthday",
+            "events": [
+                "event-birthday"
+            ],
+            "image": "stamp-event-birthday.png",
+            "splash_image": "andy-stamp-birthday.png",
+            "multiple": false
+        },
+        {
+            "stamp_id": "stamp-event-pollinatorfestival",
+            "name": "Pollinator Festival",
+            "events": [
+                "event-pollinatorfestival"
+            ],
+            "image": "stamp-event-pollinatorfestival.png",
+            "splash_image": "andy-stamp-pollinatorfestival.png",
+            "multiple": false
+        },
+        {
+            "stamp_id": "stamp-event-membertours",
+            "name": "Member Tours",
+            "events": [
+                "event-cmoamembertour-secretlanguage",
+                "event-cmoamembertour-publicart",
+                "event-cmoamembertour-contemporary"
+            ],
+            "image": "stamp-event-membertours.png",
+            "splash_image": "andy-stamp-membertours.png",
+            "multiple": true
+        },
+        {
+            "stamp_id": "stamp-event-sciencesaturdays",
+            "name": "Super Science Saturdays",
+            "events": [
+                "event-sciencesaturday-jurassic",
+                "event-sciencesaturday-scientist",
+                "event-sciencesaturday-meowfest"
+            ],
+            "image": "stamp-event-sciencesaturdays.png",
+            "splash_image": "andy-stamp-sciencesaturdays.png",
+            "multiple": true
+        },
+        {
+            "stamp_id": "stamp-event-adults",
+            "name": "Evenings For Adults",
+            "events": [
+                "event-thirdthursday-girlfx",
+                "event-thirdthursday-contemporary",
+                "event-thirdthursday-intimate",
+                "event-afterdark-harrypotter",
+                "event-goodfridays"
+            ],
+            "image": "stamp-event-adults.png",
+            "splash_image": "andy-stamp-adults.png",
+            "multiple": true
+        },
+        {
+            "stamp_id": "stamp-event-trivianight",
+            "name": "End-of-Summer Trivia Night",
+            "events": [
+                "event-trivianight"
+            ],
+            "image": "stamp-event-trivianight.png",
+            "splash_image": "andy-stamp-trivianight.png",
+            "multiple": false
+        }
+    ],
+
+    "schedule": [
+        {
+            "event": "The Andy Warhol Museum Is Closed",
+            "location": "Warhol",
+            "stamp": "* * * * 1",
+            "url": "https://www.warhol.org/calendar/"
+        },
+        {
+            "id": "testevent",
+            "event": "Andybot Test Event",
+            "location": "Warhol",
+            "description": "Test event description",
+            "details": "Test event details",
+            "url": "https://www.warhol.org",
+            "image": "event-warhol-goodfriday.png"
+        },
+        {
+            "event": "The Andy Warhol Museum Is Closed: Independence Day",
+            "location": "Warhol",
+            "stamp": "* * 4 7 *",
+            "url": "https://www.warhol.org/calendar/"
+        },
+        {
+            "event": "Good Fridays",
+            "location": "Warhol",
+            "stamp": "0 17 * * 5",
+            "description": "For a more social experience, we are open until 10 p.m. and offer half-price museum admission and a cash bar beginning at 5 p.m.",
+            "url": "https://www.warhol.org/event/good-fridays/",
+            "image": "event-warhol-goodfriday.png"
+        },
+        {
+            "event": "Dandy Andy: Warhol's Queer History",
+            "location": "Warhol",
+            "stamp": "0 15 * 6 0,6",
+            "description": "This tour traces Warhol’s romantic relationships and queer identity against the backdrop of the historical gay rights movement in the United States.",
+            "details": "Tours meet on the seventh floor.",
+            "url": "https://www.warhol.org/event/dandy-andy-warhols-queer-history/",
+            "image": "event-warhol-dandyandy.png"
+        },
+        {
+            "event": "Dandy Andy: Warhol's Queer History",
+            "location": "Warhol",
+            "stamp": "0 15 29 7 *",
+            "description": "This tour traces Warhol’s romantic relationships and queer identity against the backdrop of the historical gay rights movement in the United States.",
+            "details": "Tours meet on the seventh floor.",
+            "url": "https://www.warhol.org/event/dandy-andy-warhols-queer-history/",
+            "image": "event-warhol-dandyandy.png"
+        },
+        {
+            "event": "Dandy Andy: Warhol's Queer History",
+            "location": "Warhol",
+            "stamp": "0 15 26 8 *",
+            "description": "This tour traces Warhol’s romantic relationships and queer identity against the backdrop of the historical gay rights movement in the United States.",
+            "details": "Tours meet on the seventh floor.",
+            "url": "https://www.warhol.org/event/dandy-andy-warhols-queer-history/",
+            "image": "event-warhol-dandyandy.png"
+        },
+        {
+            "event": "Fifteen Minutes Eternal",
+            "location": "Warhol",
+            "stamp": "* * * * 0,2,3,4,5,6",
+            "description": "This thirty-minute orientation film runs continuously during museum hours. It provides visitors with an overview of Warhol's life and art",
+            "details": "See it in The Warhol Theatre, first floor.",
+            "url": "https://www.warhol.org/event/fifteen-minutes-eternal/",
+            "image": "event-warhol-fifteenminutes.png"
+        },
+        {
+            "event": "Gallery Talks",
+            "location": "Warhol",
+            "stamp": "0 11,15 * * 0,2,3,4,5,6",
+            "description": "Gallery talks led by museum staff have a thematic focus around a series of Warhol artworks or one of Warhol’s artistic processes. These 30-minute talks provide time for visitors to present insights and ask questions. ",
+            "details": "Tours meet on the museum's seventh floor.",
+            "url": "https://www.warhol.org/event/daily-gallery-talks/",
+            "image": "event-warhol-gallerytalks.png"
+        },
+        {
+            "event": "The Factory",
+            "location": "Warhol",
+            "stamp": "* * * * 0,2,3,4,5,6",
+            "description": "Visitors of all ages and abilities are invited to try some of Andy Warhol’s signature art-making techniques in our underground studio.",
+            "details": "Tuesday–Friday, 1:30–5pm; Saturday–Sunday, 12–5pm",
+            "url": "https://www.warhol.org/event/the-factory/",
+            "image": "event-warhol-thefactory.png"
+        },
+        {
+            "event": "Photographic Silkscreen Demonstration",
+            "location": "Warhol",
+            "stamp": "0 13 * * 0,2,3,4,5,6",
+            "description": "The museum’s artist educators demonstrate Warhol’s silkscreen printing process from beginning to end.",
+            "details": "See it at The Warhol entrance space.",
+            "url": "https://www.warhol.org/event/photographic-silkscreen-demonstration/",
+            "image": "event-warhol-silkscreen.png"
+        },
+        {
+            "event": "Adman: Warhol Before Pop",
+            "location": "Warhol",
+            "stamp": "* * * * 0,2,3,4,5,6",
+            "description": "Adman: Warhol Before Pop provides surprising insights into the beginning of Andy Warhol’s career.",
+            "url": "https://www.warhol.org/exhibition/adman-warhol-pop/",
+            "image": "event-warhol-adman.png"
+        },
+        {
+            "event": "Window Dressing: An Evening of Fashion from the Eons Archives",
+            "location": "Warhol",
+            "stamp": "* 19 13 7 *",
+            "description": "We host a night of cocktails, music, and 1950s fashion, carefully curated by Richard Parsakian.",
+            "details": "Register for this free event.",
+            "url": "https://www.warhol.org/event/window-dressing-evening-fashion-eons-archives/",
+            "image": "event-warhol-windowdressing.png"
+        },
+        {
+            "event": "Half-Pint Prints",
+            "location": "Warhol",
+            "stamp": "0 10 15 8 *",
+            "description": "Families work with The Warhol’s artist educators to create silkscreen prints during this drop-in silkscreen printing activity for children ages 1 to 4 years old.",
+            "details": "In our underground studio, The Factory",
+            "url": "https://www.warhol.org/event/half-pint-prints-10/",
+            "image": "event-warhol-halfpint.png"
+        },
+        {
+            "event": "Bhul Planetarium Laser Show",
+            "location": "CSC",
+            "stamp": "* * * * *",
+            "description": "Dazzling lights and rockin' beats merge for a spectacular sight and sound experience. Catch daily matinees or evening laser shows!",
+            "details": "Check the calendar for today’s show schedule.",
+            "url": "http://www.carnegiesciencecenter.org/calendar/",
+            "image": "event-csc-planetarium.png"
+        },
+        {
+            "event": "Live Shows",
+            "location": "CSC",
+            "stamp": "* * * * *",
+            "description": "Shows are included with general admission for visitors to the Science Center.",
+            "details": "Check the calendar for today’s show schedule.",
+            "url": "http://www.carnegiesciencecenter.org/calendar/",
+            "image": "event-csc-liveshows.png"
+        },
+        {
+            "event": "Tours Truly: Free Daily Collection Tour",
+            "location": "CMOA",
+            "stamp": "30 13 * * *",
+            "description": "Learn about the works in CMOA’s collection from our trained docents. Every tour is unique!",
+            "details": "Tours meet in the lobby.",
+            "url": "https://cmoa.org/calendar/category/tours/",
+            "image": "event-cmoa-dailytour.png"
+        },
+        {
+            "event": "Thursday Yoga at CMOA",
+            "location": "CMOA",
+            "stamp": "0 19 * * 4",
+            "description": "Join a crew of fellow humans for a weekly, rejuvenating yoga session set in Pittsburgh’s most beautiful spaces!",
+            "url": "https://cmoa.org/event/thursday-yoga-cmoa/",
+            "image": "event-cmoa-yoga.png"
+        },
+        {
+            "event": "Live Animal Encounter",
+            "location": "CMNH",
+            "stamp": "30 13 * * *",
+            "description": "Meet the live animals that call Carnegie Museum of Natural History home at Live Animal Encounters.",
+            "details": "In Earth Theatre, $2 per person.",
+            "url": "https://carnegiemnh.org/visitor/things-to-do/live-animal-encounters/",
+            "image": "event-cmnh-liveanimals.png"
+        }
+    ],
+    "trivia-architecture": [
+        {
+            "text": "The Hall of Architecture contains casts of many famous buildings from all around the world. What material are these copies made of?",
+            "image": "trivia-architecture-1.png",
+            "difficulty": 1,
+            "answer": "Plaster",
+            "incorrect": [
+                "Porcelain",
+                "Concrete"
+            ],
+            "followup": "Plaster casting allowed masterpieces of sculpture and architecture to be brought to Pittsburgh, for everyone to experience at full scale."
+        },
+        {
+            "text": "This intricate cast comes from the doors on the Cathedral of St. Pierre in France. What are the original doors made of?",
+            "image": "trivia-architecture-2.png",
+            "difficulty": 2,
+            "answer": "Oak",
+            "incorrect": [
+                "Bronze",
+                "Steel"
+            ],
+            "followup": "Many of the plaster sculptures in the collection have been painted to give a warm, antique appearance that resembles the original building materials."
+        },
+        {
+            "text": "The Hall of Architecture is modeled after which one of the seven wonders of the ancient world?",
+            "image": "trivia-architecture-3.png",
+            "difficulty": 3,
+            "answer": "Mausoleum at Halicarnassus",
+            "incorrect": [
+                "Lighthouse of Alexandria",
+                "Temple of Artemis"
+            ],
+            "followup": "Look up and you’ll see a column and capital fragment cast from the mausoleum. The Hall of Architecture was designed in 1907 by Pittsburgh architects Frank Alden and Alfred Harlow."
+        },
+        {
+            "text": "Around 1895, which museum rejected Carnegie Museums’ request to produce casts from its molds?",
+            "image": "trivia-architecture-4.png",
+            "difficulty": 3,
+            "answer": "The Metropolitan Museum of Art, New York",
+            "incorrect": [
+                "Musée National des Monuments Français, Paris",
+                "The Victoria and Albert Museum, London"
+            ],
+            "followup": "The Met director’s stiffly-worded rejection “defined what Carnegie Museums’ architectural collection would not be.”"
+        },
+        {
+            "text": "Andrew Carnegie wanted the walls in the Hall of Architecture painted purple, because it is a color associated with royalty.",
+            "image": "trivia-architecture-5.png",
+            "difficulty": 2,
+            "answer": false,
+            "incorrect": [
+                "True"
+            ],
+            "followup": "The walls were painted purple in 2013, as a part of the installation by artist Gabriel Sierra for the 2013 Carnegie International."
+        },
+        {
+            "text": "Approximately how many packing cases were required to move the pieces of this cast of the French Benedictine Abbey Church of St. Gilles from France to Pittsburgh?",
+            "image": "trivia-architecture-6.png",
+            "difficulty": 2,
+            "answer": 200,
+            "incorrect": [
+                "20",
+                "2000"
+            ],
+            "followup": "This cast was made in its entirety for Carnegie Museums and it is now the largest cast in the world. Cast and delivered in pieces, it had to be reassembled in the space, taking more than 18 months to complete."
+        },
+        {
+            "text": "This replica of the Parthenon is built to what scale of the original in Athens?",
+            "image": "trivia-architecture-7.png",
+            "difficulty": 2,
+            "answer": "1/20th",
+            "incorrect": [
+                "1/50th",
+                "1/100th"
+            ],
+            "followup": "The Parthenon was built by the ancient Greeks to honor the goddess Athena. In the 2400+ years since its construction, it has endured substantial damage, losing its roof, sculptures, and many columns."
+        },
+        {
+            "text": "This is a bust of which Greek goddess?",
+            "image": "trivia-architecture-8.png",
+            "difficulty": 1,
+            "answer": "Athena",
+            "incorrect": [
+                "Aphrodite",
+                "Artemis"
+            ],
+            "followup": "Athena is often depicted with a snake. She is an important goddess of many things including wisdom, courage, justice, mathematics, strength, strategy, and the arts. Find many more figures appearing with snakes throughout the Hall of Architecture."
+        },
+        {
+            "text": "The famous Porch of the Maidens has 6 draped female figures as columns. How many maidens are in its cast in the Hall of Architecture?",
+            "image": "trivia-architecture-9.png",
+            "difficulty": 1,
+            "answer": 4,
+            "incorrect": [
+                "2",
+                "6"
+            ],
+            "followup": "The Porch of the Maidens comes from the Acropolis of Athens, an citadel which contains the remains of several ancient buildings. "
+        },
+        {
+            "text": "The collection of architectural casts at Carnegie Museum of Art is the largest in the world.",
+            "image": "trivia-architecture-10.png",
+            "difficulty": 2,
+            "answer": false,
+            "incorrect": [
+                "True"
+            ],
+            "followup": "This collection is the third largest in the world, but the largest in the Americas. While most other collections have been either dispersed or destroyed, Carnegie Museum of Art’s collection has endured as an exhibition of world-class significance."
+        }
+    ],
+    "manifest": [
+        {
+            "activity": "trivia-mineralsgems",
+            "image": "trivia-mineralsgems-carousel.png",
+            "title": "Minerals and Gems Trivia",
+            "subtitle": "How much do you think you know about these fascinating objects?",
+            "museum": "CMNH",
+            "lat": 40.4432724078813,
+            "lng": -79.950002261238,
+            "floor": 1
+        },
+        {
+            "activity": "trivia-architecture",
+            "image": "trivia-architecture-carousel.png",
+            "title": "Hall of Architecture Trivia",
+            "subtitle": "Test your knowledge with Hall of Architecture trivia questions!",
+            "museum": "CMOA",
+            "lat": 40.4433539658363,
+            "lng": -79.9506084404754,
+            "floor": 1
+        },
+        {
+            "activity": "poll-brillo",
+            "image": "poll-brillo-carousel.png",
+            "title": "Ordinary Art Poll",
+            "subtitle": "Think like Warhol and see who agrees!",
+            "museum": "Warhol",
+            "lat": 40.4433539658363,
+            "lng": -79.9506084404754,
+            "floor": 1
+        },
+        {
+            "activity": "trivia-birds",
+            "image": "trivia-birds-carousel.png",
+            "title": "Bird Identification Trivia",
+            "subtitle": "Identify the birds in these photos taken at Powdermill Avian Research Center.",
+            "museum": "Powdermill",
+            "lat": 40.160169,
+            "lng": -79.271797,
+            "floor": 1
+        },
+        {
+            "activity": "trivia-plants",
+            "image": "trivia-plants-carousel.png",
+            "title": "Plant Identification Trivia",
+            "subtitle": "Identify the plants in these photos taken at Powdermill Nature Reserve.",
+            "museum": "Powdermill",
+            "lat": 40.160169,
+            "lng": -79.271797,
+            "floor": 1
+        }
+    ],
+    "trivia-mineralsgems": [
+        {
+            "text": "The presence of which element can cause a mineral to appear blue or green?",
+            "image": "trivia-mineralsgems-1.png",
+            "difficulty": 2,
+            "answer": "Copper",
+            "incorrect": [
+                "Sulfur",
+                "Cadmium"
+            ],
+            "followup": "Copper-bearing minerals include Azurite and Malachite, pictured above."
+        },
+        {
+            "text": "Luster refers to how a mineral reflects light. Which of the following is NOT a way to describe luster?",
+            "image": "trivia-mineralsgems-2.png",
+            "difficulty": 1,
+            "answer": "Pungent",
+            "incorrect": [
+                "Greasy",
+                "Metallic"
+            ],
+            "followup": "Other forms of luster include pearly, dull, waxy, earthy, and silky."
+        },
+        {
+            "text": "What is the most common mineral in the crust of the earth?",
+            "image": "trivia-mineralsgems-3.png",
+            "difficulty": 2,
+            "answer": "Quartz",
+            "incorrect": [
+                "Calcite",
+                "Pyrite"
+            ],
+            "followup": "Together, quartz and other silicates form over 90% of the Earth’s crust."
+        },
+        {
+            "text": "Which is the most powerful agent for breaking rocks down to sand and silt-sized particles?",
+            "image": "trivia-mineralsgems-4.png",
+            "difficulty": 1,
+            "answer": "Water",
+            "incorrect": [
+                "Wind",
+                "Ice"
+            ],
+            "followup": "Sand, pebbles, and boulders are carried along by fast-moving water and grind themselves and any rocks the water flows over."
+        },
+        {
+            "text": "Basalt is which of the three main types of rock?",
+            "image": "trivia-mineralsgems-5.png",
+            "difficulty": 1,
+            "answer": "Igneous",
+            "incorrect": [
+                "Sedimentary",
+                "Metamorphic"
+            ],
+            "followup": "Igneous rocks are created when molten rock cools and crystallizes."
+        },
+        {
+            "text": "The science of rocks is called _____?",
+            "image": "trivia-mineralsgems-6.png",
+            "difficulty": 2,
+            "answer": "Lithology",
+            "incorrect": [
+                "Rockology",
+                "Metology"
+            ],
+            "followup": "Rocks are naturally occuring assemblages of two or more minerals. Rocks constitute an essential part of the Earth’s crust. "
+        },
+        {
+            "text": "Which instrument is used to detect radiation in minerals like uraninite?",
+            "image": "trivia-mineralsgems-7.png",
+            "difficulty": 2,
+            "answer": "Geiger Counter",
+            "incorrect": [
+                "Seismograph",
+                "X-Ray Machine"
+            ],
+            "followup": "A geiger counter is a useful tool for prospectors searching for uranium ore in Earth’s core."
+        },
+        {
+            "text": "Ancient philosophers studied and categorized minerals.",
+            "image": "trivia-mineralsgems-8.png",
+            "difficulty": 1,
+            "answer": true,
+            "incorrect": [
+                "false"
+            ],
+            "followup": "Mineralogy was the first of the natural sciences to be established systematically. Philosophers such as Pliny in 77 A.D grouped minerals by crystal shape, color, hardness, and composition."
+        },
+        {
+            "text": "Gemstone quality is judged by the 4 C’s. Which of the following is NOT a C used to judge gem quality?",
+            "image": "trivia-mineralsgems-9.png",
+            "difficulty": 1,
+            "answer": "Cost",
+            "incorrect": [
+                "Cut",
+                "Color"
+            ],
+            "followup": "The 4 C’s are cut, clarity, color, and carat."
+        },
+        {
+            "text": "Pittsburgh is abundant in minerals that can be cut and polished into gems.",
+            "image": "trivia-mineralsgems-10.png",
+            "difficulty": 2,
+            "answer": false,
+            "incorrect": [
+                "True"
+            ],
+            "followup": "Mineral crystals of gem quality occur rarely in PA. However, Carnegie Museum of Natural History has a notable collection. Hillman Hall has gained an international reputation as one of the finest and most important mineral exhibitions in the country."
+        }
+    ],
+    "poll-brillo": [
+        {
+            "question": "Which one of these ordinary household items inspires you to make art?",
+            "choices": [
+                "fruit",
+                "lamp",
+                "box",
+                "can",
+                "chair"
+            ],
+            "images": [
+                "poll-brillo-fruit.png",
+                "poll-brillo-lamp.png",
+                "poll-brillo-box.png",
+                "poll-brillo-can.png",
+                "poll-brillo-chair.png"
+            ],
+            "followup": "In the mid-1960s Andy Warhol's caused controversy with his \\\"Brillo Box\\\" sculptures. In reference to his boxes, Warhol later said that he “wanted something ordinary,” and it was this mundane, commercial subject matter that infuriated the critics."
+        }
+    ]
+}

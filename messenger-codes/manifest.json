@@ -1,0 +1,47 @@
+{
+	"41880199": {
+		"uri": "https://scontent.xx.fbcdn.net/v/t39.8917-6/32646443_1722539431160386_2865525965696532480_n.png?_nc_cat=0&oh=3722897645e38202b2bba7973474682a&oe=5B8ED5CE",
+		"ref": "stamp-checkin-warhol",
+		"description": "Checkin for Warhol"
+	},
+	"49837760": {
+		"uri": "https://scontent.xx.fbcdn.net/v/t39.8917-6/32672532_1912186138800178_1723849664723156992_n.png?_nc_cat=0&oh=6909d6e6428ed9a2342fbe9f57cab001&oe=5B8F19BC",
+		"ref": "stamp-checkin-oakland",
+		"description": "Checkin for oakland"
+	},
+	"250ac78e": {
+		"uri": "https://scontent.xx.fbcdn.net/v/t39.8917-6/29797435_2109993992351966_1174569067491622912_n.png?_nc_cat=0&oh=fb20c6dd7a511f5860367e81e50e0f7b&oe=5B65D507",
+		"ref": "cmnh-checkin",
+		"description": "AAM Booth Marker"
+	},
+	"5099658e": {
+		"uri": "https://scontent.xx.fbcdn.net/v/t39.8917-6/29664449_2285125034846192_701532630914433024_n.png?_nc_cat=0&oh=5bdb34da3ec4c1c284be98d4d2257287&oe=5B60D7E7",
+		"ref": "aam-booth",
+		"description": "AAM Booth Marker"
+	},
+	"74dcc622": {
+		"uri": "https://scontent.xx.fbcdn.net/v/t39.8917-6/30175784_1667450256704588_4249325928380891136_n.png?_nc_cat=0&oh=9563147c93ad3679ada3fc2091adc714&oe=5B66B1CE",
+		"ref": "summer-adventure-papermap",
+		"description": "Printed on the paper map"
+	},
+	"663a41a0": {
+		"uri": "https://scontent.xx.fbcdn.net/v/t39.8917-6/31444131_1790611000996998_1652905278963712_n.png?_nc_cat=0&oh=e04ab3f7dcd6484cc21d7d556ffad941&oe=5B5910D8",
+		"ref": "airport",
+		"description": "airport onboarding at CC"
+	},
+	"30f65153": {
+		"uri": "https://scontent.xx.fbcdn.net/v/t39.8917-6/31482348_2060851100610687_2743661508532633600_n.png?_nc_cat=0&oh=4d67eaade5dd1accb42fd61fdf122a23&oe=5B62ADC4",
+		"ref": "AamPoll",
+		"description": "Poll code for Brillo at AAM"
+	},
+	"44657fae": {
+		"uri": "https://scontent.xx.fbcdn.net/v/t39.8917-6/32738305_2033166863378541_169360962892070912_n.png?_nc_cat=0&oh=cb575a1807bff5589167c8fd9bebdfdc&oe=5B8408DB",
+		"ref": "stamp-checkin-csc",
+		"description": "Checkin for CSC"
+	},
+	"cc3e023f": {
+		"uri": "https://scontent.xx.fbcdn.net/v/t39.8917-6/32645669_1664568060291496_4353476059220410368_n.png?_nc_cat=0&oh=3043968e3569a2d43352cd4a101b8456&oe=5B951FB8",
+		"ref": "stamp-checkin-powdermill",
+		"description": "Checkin for Powdermill"
+	}
+}

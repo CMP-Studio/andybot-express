@@ -1,5 +1,16 @@
 {
   "dependencies": {
-    "express": "^4.16.3"
+    "body-parser": "^1.18.3",
+    "express": "^4.16.3",
+    "global": "^4.3.2",
+    "knex": "^0.14.6",
+    "lodash": "^4.17.10",
+    "morgan": "^1.9.0",
+    "pg": "^7.4.3"
+  },
+  "devDependencies": {
+    "messenger-codes": "https://github.com/CMP-Studio/messenger-codes.git",
+    "nodemon": "^1.17.4",
+    "sqlite3": "^4.0.0"
   }
 }
