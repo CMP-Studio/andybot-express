@@ -36,7 +36,6 @@ app.post('/createUser', async (req, res) => {
     }
 });
 
-
 app.post('/userExists', async (req, res) => {
     try {
         const exists = await User.exists(req.body.page_id);
@@ -57,7 +56,7 @@ app.post('/scan/scanCode', async (req, res) => {
             error: "InternalError"
         });
     }
-})
+});
 
-
-app.listen(3001, () => console.log('Example app listening on port 3001!'))
+const port = process.env.PORT || 3001;
+app.listen(port, () => console.log(`Example app listening on port ${port}!`));
