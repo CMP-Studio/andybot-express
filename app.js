@@ -58,8 +58,8 @@ app.post('/scan/scanCode', async (req, res) => {
 
 app.get('/events', async (req, res) => {
     try {
-        const todaySchedule = await Schedule.today();
-        res.json(todaySchedule);
+        const eventsResponse = await Schedule.events();
+        res.json(eventsResponse);
     } catch (err){
         console.error(err);
         res.json({
