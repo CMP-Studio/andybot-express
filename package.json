@@ -10,6 +10,7 @@
     "pg": "^7.4.3"
   },
   "devDependencies": {
+    "messenger-codes": "https://github.com/CMP-Studio/messenger-codes.git",
     "nodemon": "^1.17.4",
     "sqlite3": "^4.0.0"
   }

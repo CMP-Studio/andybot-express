@@ -1,15 +1,12 @@
 const codes = require("../messenger-codes/manifest.json");
 const utils = require("../utils");
 const Stamp = require("./Stamp");
+const activities = require("./activities.json");
+const _ = require("lodash");
 
 function isStampCode(code) {
     // Basically these plus the other special ones
-    const stampCodes = [
-        "stamp-checkin-oakland",
-        "stamp-checkin-csc",
-        "stamp-checkin-powdermill",
-        "stamp-checkin-warhol"
-    ];
+    const stampCodes = _.map(activities.stamps, (s) => s.stamp_id);
     return stampCodes.indexOf(code.ref) > -1;
 }
 
