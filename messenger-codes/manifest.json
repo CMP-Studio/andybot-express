@@ -63,5 +63,10 @@
 		"uri": "https://scontent.xx.fbcdn.net/v/t39.8917-6/32771525_1773003222759617_7840246637438959616_n.png?_nc_cat=0&oh=76a6a419e4dede916dc5900fa27b3e55&oe=5B4F94B8",
 		"ref": "stamp-event-icecream",
 		"description": "Ice Cream event"
+	},
+	"e3650a9b": {
+		"uri": "https://scontent.xx.fbcdn.net/v/t39.8917-6/32785778_1542707332504893_7376738186375987200_n.png?_nc_cat=0&oh=9e18d96bf59024dd5546ee626072663b&oe=5B83B925",
+		"ref": "stamp-event-birthday",
+		"description": "Andy Birthday event"
 	}
 }
