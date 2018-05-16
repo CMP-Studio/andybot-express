@@ -58,5 +58,10 @@
 		"uri": "https://scontent.xx.fbcdn.net/v/t39.8917-6/32771529_1632757500175840_5920078557396074496_n.png?_nc_cat=0&oh=cd7c084dd151e0f4f134febda9ccb8dd&oe=5B8B6A5D",
 		"ref": "stamp-event-fashion",
 		"description": "Fashion event"
+	},
+	"46d0ebad": {
+		"uri": "https://scontent.xx.fbcdn.net/v/t39.8917-6/32771525_1773003222759617_7840246637438959616_n.png?_nc_cat=0&oh=76a6a419e4dede916dc5900fa27b3e55&oe=5B4F94B8",
+		"ref": "stamp-event-icecream",
+		"description": "Ice Cream event"
 	}
 }
