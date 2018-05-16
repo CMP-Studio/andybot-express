@@ -88,5 +88,10 @@
 		"uri": "https://scontent.xx.fbcdn.net/v/t39.8917-6/32698727_2110531245629425_5650458862948450304_n.png?_nc_cat=0&oh=115eb14cc970128a6e806c40354e9460&oe=5B85DABF",
 		"ref": "stamp-event-adults",
 		"description": "Adults evening event"
+	},
+	"f8c056a3": {
+		"uri": "https://scontent.xx.fbcdn.net/v/t39.8917-6/32766863_1884044291627060_7831780290530902016_n.png?_nc_cat=0&oh=11af5376b573047222359b96c580e61f&oe=5B977290",
+		"ref": "stamp-event-trivianight",
+		"description": "Trivia night event"
 	}
 }
