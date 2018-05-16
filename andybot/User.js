@@ -6,11 +6,6 @@ const Stamp = require("./Stamp");
 module.exports = {
 
     exists: async (pageId) => {
-
-        db.raw('select 1+1 as result').then(function (result) {
-            console.log(result)
-        });
-
         if (utils.isNull(pageId)) {
             throw new Error("Page ID must be defined");
         }

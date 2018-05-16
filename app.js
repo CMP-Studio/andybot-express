@@ -7,6 +7,7 @@ const morgan = require('morgan')
 const User = require("./andybot/User");
 const Scan = require("./andybot/Scan");
 const Schedule = require("./andybot/Schedule");
+const Trivia = require("./andybot/Trivia");
 
 app.use(cors())
 app.use(bodyParser.json());
@@ -60,6 +61,21 @@ app.get('/events', async (req, res) => {
     try {
         const eventsResponse = await Schedule.events();
         res.json(eventsResponse);
+    } catch (err){
+        console.error(err);
+        res.json({
+            error: "InternalError"
+        });
+    }
+})
+
+
+app.post('/trivia/submitScore', async (req, res) => {
+    try {
+        const submitScoreResponse = await Trivia.submitScore(
+            req.body.fb_page_id, req.body.activity_id, req.body.correct, req.body.total
+        );
+        res.json(submitScoreResponse);
     } catch (err){
         console.error(err);
         res.json({

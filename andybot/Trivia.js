@@ -4,8 +4,8 @@
 const User = require("./User");
 const utils = require("../utils");
 const _ = require("lodash");
-const activities = require("../activities.json");
 const db = require("../db");
+const activities = require("./activities.json");
 
 module.exports = {
 
