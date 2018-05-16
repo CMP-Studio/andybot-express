@@ -153,166 +153,326 @@
 
     "schedule": [
         {
-            "event": "The Andy Warhol Museum Is Closed",
-            "location": "Warhol",
-            "stamp": "* * * * 1",
-            "url": "https://www.warhol.org/calendar/"
+            "id": "event-grandopening",
+            "stamp_id": "stamp-event-grandopening",
+            "event": "Grand Opening of PPG Science Pavilion™ and The Art of the Brick",
+            "image": "event-carousel-grandopening.png",
+            "location": "CSC",
+            "description": "Kick off Summer Adventure with the highly-anticipated opening of the PPG Science Pavilion. A limited number of free tickets to The Art of the Brick will be available for members as well as activities celebrating the brand-new learning spaces!",
+            "url": "http://www.carnegiesciencecenter.org/",
+            "when": "June 16, 11am–5pm"
         },
         {
-            "id": "testevent",
-            "event": "Andybot Test Event",
-            "location": "Warhol",
-            "description": "Test event description",
-            "details": "Test event details",
-            "url": "https://www.warhol.org",
-            "image": "event-warhol-goodfriday.png"
+            "id": "event-starfestival",
+            "stamp_id": "stamp-event-starfestival",
+            "event": "Star Festival",
+            "image": "event-carousel-starfestival.png",
+            "location": "CMOA",
+            "description": "Celebrate CMOA’s Japanese print exhibition, Hiroshige’s Tôkaidô Road, with this Japanese Tanabata Festival for all ages! Add your wishes to our outdoor bamboo garden, see and make amazing prints, sample foods, and listen to traditional music.",
+            "url": "https://cmoa.org/calendar/",
+            "when": "July 7, 12:30–4:30 pm"
         },
         {
-            "event": "The Andy Warhol Museum Is Closed: Independence Day",
+            "id": "event-fashion",
+            "stamp_id": "stamp-event-fashion",
+            "event": "Evening of Fashion",
+            "image": "event-carousel-fashion.png",
             "location": "Warhol",
-            "stamp": "* * 4 7 *",
-            "url": "https://www.warhol.org/calendar/"
+            "description": "In conjunction with the exhibition Adman: Warhol Before Pop, The Warhol and Eons Fashion Antique host a night of cocktails, music, and 1950s fashion at Window Dressing: An Evening of Fashion. Live models showcasing items from Richard Parsakian’s archive will bring to life works from Adman. The cash bar will feature craft drinks inspired by Andy Warhol’s mother, Julia Warhola.",
+            "details": "Register at www.warhol.org.",
+            "url": "https://www.warhol.org/event/window-dressing-evening-fashion-eons-archives/",
+            "when": "July 13, 7–10pm"
         },
         {
+            "id": "event-icecream",
+            "stamp_id": "stamp-event-icecream",
+            "event": "Ice Cream Social",
+            "image": "event-carousel-icecream.png",
+            "location": "CMNH",
+            "description": "Experience Carnegie paleontologist Matt Lamanna’s arctic trek in Expedition Antarctica and enjoy a sweet treat afterward!",
+            "url": "https://carnegiemnh.org/",
+            "when": "July 15, 3–5pm"
+        },
+        {
+            "id": "event-birthday",
+            "stamp_id": "stamp-event-birthday",
+            "event": "Andy's Birthday",
+            "image": "event-carousel-birthday.png",
+            "location": "Warhol",
+            "description": "Celebrate the Andy Warhol’s 90th birthday with family-friendly activities throughout the museum. Join us for special gallery activities, hands-on artmaking, and a behind-the-scenes look at The Warhol’s extensive and unusual archives.",
+            "url": "https://www.warhol.org/event/andys-birthday/",
+            "when": "August 4, 10am–5pm"
+        },
+        {
+            "id": "event-pollinatorfestival",
+            "stamp_id": "stamp-event-pollinatorfestival",
+            "event": "Pollinator Festival",
+            "image": "event-carousel-pollinatorfestival.png",
+            "location": "Powdermill",
+            "description": "The second annual Powdermill Pollinator Festival is free and open to the public, and will include food, garden tours, and sales of honey and bee products, as well as a large plant sale which will highlight native plants that attract pollinators.",
+            "details": "This event takes place at Powdermill Nature Reserve in Rector, PA",
+            "url": "https://carnegiemnh.org/visitor/powdermill-nature-reserve/",
+            "when": "August 11, 10am–3pm"
+        },
+        {
+            "id": "event-trivianight",
+            "stamp_id": "stamp-event-trivianight",
+            "event": "Trivia Night",
+            "image": "event-carousel-trivianight.png",
+            "location": "CMNH",
+            "description": "End your summer adventure with a bang! Spend an evening testing the knowledge you acquired from your time at the museums this summer. Bring your stamped Summer Adventure Map for the chance to win prizes. Each stamp is another chance to win gift certificates, membership renewal, Carnegie Cash, and more in the drawing.",
+            "url": "https://carnegiemnh.org/",
+            "when": "August 25, 6–8pm"
+        },
+        {
+            "id": "event-cmoamembertour-secretlanguage",
+            "stamp_id": "stamp-event-membertours",
+            "event": "Member Tour: The Secret Language of Art",
+            "image": "event-carousel-cmoamembertours.png",
+            "location": "CMOA",
+            "description": "To register, call 412.622.3314 or email membership@carnegiemuseums.org.",
+            "url": "https://cmoa.org/visit/tours/member-tours/",
+            "when": "June 10, 2–3pm"
+        },
+        {
+            "id": "event-cmoamembertour-publicart",
+            "stamp_id": "stamp-event-membertours",
+            "event": "Member Tour: Fresh Air, Public Art",
+            "image": "event-carousel-cmoamembertours.png",
+            "location": "CMOA",
+            "description": "To register, call 412.622.3314 or email membership@carnegiemuseums.org.",
+            "url": "https://cmoa.org/visit/tours/member-tours/",
+            "when": "July 15, 2–3pm"
+        },
+        {
+            "id": "event-cmoamembertour-contemporary",
+            "stamp_id": "stamp-event-membertours",
+            "event": "Member Tour: Contemporary Galleries (+ Carry on the Conversation)",
+            "image": "event-carousel-cmoamembertours.png",
+            "location": "CMOA",
+            "description": "To register, call 412.622.3314 or email membership@carnegiemuseums.org.",
+            "url": "https://cmoa.org/visit/tours/member-tours/",
+            "when": "August 12, 2–3pm"
+        },
+        {
+            "id": "event-cmnhmembertour-gemsminerals",
+            "stamp_id": "stamp-event-membertours",
+            "event": "Member Tour: Gems and Minerals",
+            "image": "event-carousel-cmnhmembertours.png",
+            "location": "CMNH",
+            "description": "To register, call 412.622.3314 or email membership@carnegiemuseums.org.",
+            "url": "https://carnegiemnh.org/",
+            "when": "June 9, 2–3pm"
+        },
+        {
+            "id": "event-cmnhmembertour-safari",
+            "stamp_id": "stamp-event-membertours",
+            "event": "Member Tour: Natural History Safari",
+            "image": "event-carousel-cmnhmembertours.png",
+            "location": "CMNH",
+            "description": "To register, call 412.622.3314 or email membership@carnegiemuseums.org.",
+            "url": "https://carnegiemnh.org/",
+            "when": "July 14, 2–3pm"
+        },
+        {
+            "id": "event-cmnhmembertour-egypt",
+            "stamp_id": "stamp-event-membertours",
+            "event": "Member Tour: Ancient Egypt",
+            "image": "event-carousel-cmnhmembertours.png",
+            "location": "CMNH",
+            "description": "To register, call 412.622.3314 or email membership@carnegiemuseums.org.",
+            "url": "https://carnegiemnh.org/",
+            "when": "August 11, 2–3pm"
+        },
+        {
+            "id": "event-warholmembertour-adman",
+            "stamp_id": "stamp-event-membertours",
+            "event": "Member Tour: Adman: Warhol Before Pop ",
+            "image": "event-carousel-warholmembertours.png",
+            "location": "Warhol",
+            "description": "To register, call 412.622.3314 or email membership@carnegiemuseums.org.",
+            "url": "https://www.warhol.org/event/member-tour-adman-warhol-before-pop/",
+            "when": "June 30, 2–3pm"
+        },
+        {
+            "id": "event-thirdthursday-girlfx",
+            "stamp_id": "stamp-event-adults",
+            "event": "Third Thursday: girlFx",
+            "image": "event-carousel-thirdthursday.png",
+            "location": "CMOA",
+            "description": "Party in the Sculpture Court with girlFx.",
+            "details": "$10 advance/$15 door (10% member discount)",
+            "url": "https://cmoa.org/event/third-thursday-girlfx/",
+            "when": "June 21, 8–11pm"
+        },
+        {
+            "id": "event-thirdthursday-contemporary",
+            "stamp_id": "stamp-event-adults",
+            "event": "Third Thursday: Crossroads",
+            "image": "event-carousel-thirdthursday.png",
+            "location": "CMOA",
+            "description": "Celebrate the opening of Crossroads, the new installation of our postwar contemporary collection.",
+            "details": "$10 advance/$15 door (10% member discount)",
+            "url": "https://cmoa.org/event/third-thursday-crossroads/",
+            "when": "July 19,  8–11pm"
+        },
+        {
+            "id": "event-thirdthursday-intimate",
+            "stamp_id": "stamp-event-adults",
+            "event": "Third Thursday: Intimate Subjects",
+            "image": "event-carousel-thirdthursday.png",
+            "location": "CMOA",
+            "description": "City of Play and slowdanger present an evening of interactions and immersive adventures.",
+            "details": "$10 advance/$15 door (10% member discount)",
+            "url": "https://cmoa.org/event/third-thursday-intimate-subjects-2/",
+            "when": "August 16, 8–11pm"
+        },
+        {
+            "id": "event-afterdark-harrypotter",
+            "stamp_id": "stamp-event-adults",
+            "event": "After Dark: Harry Potter",
+            "image": "event-carousel-afterdark.png",
+            "location": "CMNH",
+            "description": "Grab a friend, get a drink at the cash bar, and enjoy a night out!",
+            "details": "$1 advance/$20 door (10% member discount)",
+            "url": "https://carnegiemnh.org/visitor/things-to-do/after-dark/",
+            "when": "July 27, 6–10pm"
+        },
+        {
+            "id": "event-goodfridays",
+            "stamp_id": "stamp-event-adults",
             "event": "Good Fridays",
+            "image": "event-carousel-goodfridays.png",
             "location": "Warhol",
-            "stamp": "0 17 * * 5",
-            "description": "For a more social experience, we are open until 10 p.m. and offer half-price museum admission and a cash bar beginning at 5 p.m.",
+            "description": "Grab a friend, get a drink at the cash bar, and enjoy a night out!",
+            "details": "For a more social experience, we are open until 10 p.m. and offer half-price museum admission and a cash bar beginning at 5 p.m.",
             "url": "https://www.warhol.org/event/good-fridays/",
-            "image": "event-warhol-goodfriday.png"
+            "when": "Every Friday, 5–10pm"
         },
         {
+            "id": "event-sciencesaturday-jurassic",
+            "stamp_id": "stamp-event-sciencesaturdays",
+            "event": "Super Science Saturday: Jurassic Day",
+            "image": "event-carousel-sciencesaturday.png",
+            "location": "CMNH",
+            "description": "Visitors can explore a topic in-depth through hands-on activities, experiments, demonstrations, discussions with museum experts, family-friendly activities, and more.",
+            "url": "https://carnegiemnh.org/visitor/things-to-do/super-science-saturdays/",
+            "when": "June 16, 12–4pm"
+        },
+        {
+            "id": "event-sciencesaturday-scientist",
+            "stamp_id": "stamp-event-sciencesaturdays",
+            "event": "Super Science Saturday: Scientist Takeover",
+            "image": "event-carousel-sciencesaturday.png",
+            "location": "CMNH",
+            "description": "Visitors can explore a topic in-depth through hands-on activities, experiments, demonstrations, discussions with museum experts, family-friendly activities, and more.",
+            "url": "https://carnegiemnh.org/visitor/things-to-do/super-science-saturdays/",
+            "when": "July 21, 12–4pm"
+        },
+        {
+            "id": "event-sciencesaturday-meowfest",
+            "stamp_id": "stamp-event-sciencesaturdays",
+            "event": "Super Science Saturday: Meowfest",
+            "image": "event-carousel-sciencesaturday.png",
+            "location": "CMNH",
+            "description": "Visitors can explore a topic in-depth through hands-on activities, experiments, demonstrations, discussions with museum experts, family-friendly activities, and more.",
+            "url": "https://carnegiemnh.org/visitor/things-to-do/super-science-saturdays/",
+            "when": "August 18, 12–4pm"
+        },
+        {
+            "id": "event-dandyandy",
             "event": "Dandy Andy: Warhol's Queer History",
+            "image": "event-carousel-dandyandy.png",
             "location": "Warhol",
-            "stamp": "0 15 * 6 0,6",
             "description": "This tour traces Warhol’s romantic relationships and queer identity against the backdrop of the historical gay rights movement in the United States.",
             "details": "Tours meet on the seventh floor.",
             "url": "https://www.warhol.org/event/dandy-andy-warhols-queer-history/",
-            "image": "event-warhol-dandyandy.png"
+            "when": "Last Saturday of each month, Saturdays and Sunday in June"
         },
         {
-            "event": "Dandy Andy: Warhol's Queer History",
-            "location": "Warhol",
-            "stamp": "0 15 29 7 *",
-            "description": "This tour traces Warhol’s romantic relationships and queer identity against the backdrop of the historical gay rights movement in the United States.",
-            "details": "Tours meet on the seventh floor.",
-            "url": "https://www.warhol.org/event/dandy-andy-warhols-queer-history/",
-            "image": "event-warhol-dandyandy.png"
-        },
-        {
-            "event": "Dandy Andy: Warhol's Queer History",
-            "location": "Warhol",
-            "stamp": "0 15 26 8 *",
-            "description": "This tour traces Warhol’s romantic relationships and queer identity against the backdrop of the historical gay rights movement in the United States.",
-            "details": "Tours meet on the seventh floor.",
-            "url": "https://www.warhol.org/event/dandy-andy-warhols-queer-history/",
-            "image": "event-warhol-dandyandy.png"
-        },
-        {
-            "event": "Fifteen Minutes Eternal",
-            "location": "Warhol",
-            "stamp": "* * * * 0,2,3,4,5,6",
-            "description": "This thirty-minute orientation film runs continuously during museum hours. It provides visitors with an overview of Warhol's life and art",
-            "details": "See it in The Warhol Theatre, first floor.",
-            "url": "https://www.warhol.org/event/fifteen-minutes-eternal/",
-            "image": "event-warhol-fifteenminutes.png"
-        },
-        {
+            "id": "event-gallerytalks",
             "event": "Gallery Talks",
+            "image": "event-carousel-gallerytalks.png",
             "location": "Warhol",
-            "stamp": "0 11,15 * * 0,2,3,4,5,6",
             "description": "Gallery talks led by museum staff have a thematic focus around a series of Warhol artworks or one of Warhol’s artistic processes. These 30-minute talks provide time for visitors to present insights and ask questions. ",
             "details": "Tours meet on the museum's seventh floor.",
             "url": "https://www.warhol.org/event/daily-gallery-talks/",
-            "image": "event-warhol-gallerytalks.png"
+            "when": "Daily"
         },
         {
+            "id": "event-factory",
             "event": "The Factory",
+            "image": "event-carousel-factory.png",
             "location": "Warhol",
-            "stamp": "* * * * 0,2,3,4,5,6",
             "description": "Visitors of all ages and abilities are invited to try some of Andy Warhol’s signature art-making techniques in our underground studio.",
-            "details": "Tuesday–Friday, 1:30–5pm; Saturday–Sunday, 12–5pm",
             "url": "https://www.warhol.org/event/the-factory/",
-            "image": "event-warhol-thefactory.png"
+            "when": "Tuesday–Friday, 1:30–5pm; Saturday–Sunday, 12–5pm"
         },
         {
+            "id": "event-silkscreen",
             "event": "Photographic Silkscreen Demonstration",
+            "image": "event-carousel-silkscreen.png",
             "location": "Warhol",
-            "stamp": "0 13 * * 0,2,3,4,5,6",
             "description": "The museum’s artist educators demonstrate Warhol’s silkscreen printing process from beginning to end.",
             "details": "See it at The Warhol entrance space.",
             "url": "https://www.warhol.org/event/photographic-silkscreen-demonstration/",
-            "image": "event-warhol-silkscreen.png"
+            "when": "Daily at 1pm"
         },
         {
-            "event": "Adman: Warhol Before Pop",
-            "location": "Warhol",
-            "stamp": "* * * * 0,2,3,4,5,6",
-            "description": "Adman: Warhol Before Pop provides surprising insights into the beginning of Andy Warhol’s career.",
-            "url": "https://www.warhol.org/exhibition/adman-warhol-pop/",
-            "image": "event-warhol-adman.png"
-        },
-        {
-            "event": "Window Dressing: An Evening of Fashion from the Eons Archives",
-            "location": "Warhol",
-            "stamp": "* 19 13 7 *",
-            "description": "We host a night of cocktails, music, and 1950s fashion, carefully curated by Richard Parsakian.",
-            "details": "Register for this free event.",
-            "url": "https://www.warhol.org/event/window-dressing-evening-fashion-eons-archives/",
-            "image": "event-warhol-windowdressing.png"
-        },
-        {
+            "id": "event-halfpint",
             "event": "Half-Pint Prints",
+            "image": "event-carousel-halfpint.png",
             "location": "Warhol",
-            "stamp": "0 10 15 8 *",
             "description": "Families work with The Warhol’s artist educators to create silkscreen prints during this drop-in silkscreen printing activity for children ages 1 to 4 years old.",
             "details": "In our underground studio, The Factory",
             "url": "https://www.warhol.org/event/half-pint-prints-10/",
-            "image": "event-warhol-halfpint.png"
+            "when": "August 15, 10am–12pm"
         },
         {
+            "id": "event-lasershow",
             "event": "Bhul Planetarium Laser Show",
+            "image": "event-carousel-lasershow.png",
             "location": "CSC",
-            "stamp": "* * * * *",
             "description": "Dazzling lights and rockin' beats merge for a spectacular sight and sound experience. Catch daily matinees or evening laser shows!",
             "details": "Check the calendar for today’s show schedule.",
-            "url": "http://www.carnegiesciencecenter.org/calendar/",
-            "image": "event-csc-planetarium.png"
+            "url": "http://www.carnegiesciencecenter.org/calendar/"
         },
         {
-            "event": "Live Shows",
+            "id": "event-liveshow",
+            "event": "Live Show",
+            "image": "event-carousel-liveshow.png",
             "location": "CSC",
-            "stamp": "* * * * *",
             "description": "Shows are included with general admission for visitors to the Science Center.",
             "details": "Check the calendar for today’s show schedule.",
-            "url": "http://www.carnegiesciencecenter.org/calendar/",
-            "image": "event-csc-liveshows.png"
+            "url": "http://www.carnegiesciencecenter.org/calendar/"
         },
         {
+            "id": "event-dailytour",
             "event": "Tours Truly: Free Daily Collection Tour",
+            "image": "event-carousel-dailytour.png",
             "location": "CMOA",
-            "stamp": "30 13 * * *",
             "description": "Learn about the works in CMOA’s collection from our trained docents. Every tour is unique!",
             "details": "Tours meet in the lobby.",
             "url": "https://cmoa.org/calendar/category/tours/",
-            "image": "event-cmoa-dailytour.png"
+            "when": "Daily at 1:30pm"
         },
         {
+            "id": "event-yoga",
             "event": "Thursday Yoga at CMOA",
+            "image": "event-carousel-yoga.png",
             "location": "CMOA",
-            "stamp": "0 19 * * 4",
             "description": "Join a crew of fellow humans for a weekly, rejuvenating yoga session set in Pittsburgh’s most beautiful spaces!",
-            "url": "https://cmoa.org/event/thursday-yoga-cmoa/",
-            "image": "event-cmoa-yoga.png"
+            "details": "All classes are drop-in; no online pre-registration is available.",
+            "url": "https://cmoa.org/event/thursday-yoga-cmoa/"
         },
         {
+            "id": "event-liveanimals",
             "event": "Live Animal Encounter",
+            "image": "event-carousel-liveanimals.png",
             "location": "CMNH",
-            "stamp": "30 13 * * *",
             "description": "Meet the live animals that call Carnegie Museum of Natural History home at Live Animal Encounters.",
             "details": "In Earth Theatre, $2 per person.",
-            "url": "https://carnegiemnh.org/visitor/things-to-do/live-animal-encounters/",
-            "image": "event-cmnh-liveanimals.png"
+            "url": "https://carnegiemnh.org/visitor/things-to-do/live-animal-encounters/"
         }
     ],
     "trivia-architecture": [

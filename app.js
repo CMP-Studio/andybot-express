@@ -6,6 +6,7 @@ const morgan = require('morgan')
 
 const User = require("./andybot/User");
 const Scan = require("./andybot/Scan");
+const Schedule = require("./andybot/Schedule");
 
 app.use(cors())
 app.use(bodyParser.json());
@@ -54,6 +55,18 @@ app.post('/scan/scanCode', async (req, res) => {
         });
     }
 });
+
+app.get('/events', async (req, res) => {
+    try {
+        const todaySchedule = await Schedule.today();
+        res.json(todaySchedule);
+    } catch (err){
+        console.error(err);
+        res.json({
+            error: "InternalError"
+        });
+    }
+})
 
 const port = process.env.PORT || 3001;
 app.listen(port, () => console.log(`Example app listening on port ${port}!`));
