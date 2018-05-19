@@ -1,13 +1,19 @@
 const codes = require("../messenger-codes/manifest.json");
 const utils = require("../utils");
 const Stamp = require("./Stamp");
+const User = require("./User");
 const activities = require("./activities.json");
 const _ = require("lodash");
 
 function isStampCode(code) {
     // Basically these plus the other special ones
-    const stampCodes = _.map(activities.stamps, (s) => s.stamp_id);
+    const stampCodes = _.map(activities.stamps, (s) => s.messenger_code);
     return stampCodes.indexOf(code.ref) > -1;
+}
+
+function getScanLocation(scannedCode) {
+    const scan = _.find(activities.scan, (s) => s.messenger_code === scannedCode.ref)
+    return utils.isNonNull(scan) ? scan : null;
 }
 
 function isScavengerHuntCode(code) {
@@ -20,31 +26,39 @@ module.exports = {
         if (utils.isNonNull(scannedCode)) {
             let stamp;
             let activity;
-            // 1. Grant stamp if necessary. Set user location.
+
+
+            // 1. Do a location. Set location.
+            const scan = getScanLocation(scannedCode);
+            if (utils.isNonNull(scan)) {
+                await User.setState(pageId, {
+                    location: scan.location,
+                    last_scan_timestamp: (new Date()).getTime()
+                });
+            }
+
+            // 2. Grant stamp if necessary. Set user location.
             if (isStampCode(scannedCode)) {
                 try {
                     stamp = await Stamp.grant(pageId, scannedCode.ref);
-                    return { code: scannedCode, stamp };
+                    return { code: scannedCode, stamp, scan };
                 } catch (err) {
                     stamp = { error: err.message };
-                    return { code: scannedCode, stamp };
+                    return { code: scannedCode, stamp, scan };
                 }
             }
 
-            // 1.5 Do a checkin if possible to an event. Set location.
 
 
+            // // 3. Check for scavenger hunt scan
+            // if (isScavengerHuntCode(scannedCode)) {
+            //     return;
+            // }
 
-            // 3. Check for scavenger hunt scan
-            if (isScavengerHuntCode(scannedCode)) {
-                return;
-            }
-
-            // 4. Return activity-trigger if necessary TODO
+            // // 4. Return activity-trigger if necessary TODO
 
             return;
         }
-        console.log(codes[code]);
         return null;
 
     }
@@ -70,7 +84,7 @@ module.exports = {
 //             let activity;
 //             // 1. Grant stamp if necessary. Set user location.
 //             if (isStampCode(scannedCode)) {
-//                 console.log("We have a stamp code");
+//                 Clog("We have a stamp code");
 //                 try {
 //                     stamp = await Stamp.grant(pageId, scannedCode.ref);
 //                     return { code: scannedCode, stamp };

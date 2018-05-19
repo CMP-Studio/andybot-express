@@ -6,7 +6,9 @@ const schedule = require("./activities.json").schedule;
 const striptags = require('striptags');
 
 async function getCalendarEvents() {
+
     let timeMin, timeMax;
+
     if (process.env.NODE_ENV === 'development') {
         timeMin = new Date(new Date().getTime() + (20 * 24 * 60 * 60 * 1000));
         timeMax = new Date(new Date().getTime() + (27 * 24 * 60 * 60 * 1000))

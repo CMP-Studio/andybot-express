@@ -1,7 +1,48 @@
 const utils = require("../utils");
 const db = require("../db");
+const _ = require("lodash");
 const tableName = "user";
+
 const Stamp = require("./Stamp");
+const Poll = require("./Poll");
+const Trivia = require("./Trivia");
+const activities = require("./activities.json");
+
+async function completedActivities(pageId) {
+    // find trivia rows
+    const completedPolls = await Poll.completed(pageId);
+    const completedActivities = await Trivia.completed(pageId);
+
+    return [ ...completedPolls, ...completedActivities];
+    // find poll rows
+
+    // Return Ids
+}
+
+const getUser = async (pageId, fields) => {
+    if (utils.isNull(pageId)) {
+        throw new Error("Page ID must be defined");
+    }
+    const user  = await db(tableName).select([
+        "fb_page_id", "email", "name", "points", "created_at", "state"
+    ]).where({
+        fb_page_id: pageId
+    });
+
+    const stamps = await Stamp.collection(pageId);
+    return user.length > 0 ? Object.assign({}, user[0], {stamps}) : null;
+}
+
+const setState = async (pageId, state) => {
+    const stateUpdated = await db(tableName).update({
+        state
+    }).where({
+        fb_page_id: pageId
+    });
+    return stateUpdated;
+}
+
+
 
 module.exports = {
 
@@ -29,18 +70,57 @@ module.exports = {
         return newUser;
     },
 
-    get: async (pageId, fields) => {
+    get: getUser,
+
+    setState: setState,
+
+    avaliableActivities: async (pageId) => {
         if (utils.isNull(pageId)) {
             throw new Error("Page ID must be defined");
         }
-        const user  = await db(tableName).select([
-            "fb_page_id", "email", "name", "points", "created_at", "state"
-        ]).where({
-            fb_page_id: pageId
-        });
 
-        const stamps = await Stamp.collection(pageId);
-        return user.length > 0 ? Object.assign({}, user[0], {stamps}) : null;
+        let activitiesForUser = activities.manifest;
+        // Filter completed activities
+        const completed = await completedActivities(pageId);
+        let incompleteActivities = _.filter(activities.manifest, (a) => completed.indexOf(a.activity) <= -1);
+
+        const user = await getUser(pageId);
+        let locationActivities;
+        if (utils.isNonNull(user.state.location)) {
+            const threeHoursMs = 3 * 60 * 60 * 1000;
+            const currTimestamp = (new Date()).getTime();
+            const checkinTime = user.state.last_scan_timestamp;
+            if (currTimestamp - checkinTime <= threeHoursMs) {
+                locationActivities = _.filter(activities.manifest, (a) => {
+                    return a.location === user.state.location
+                });
+            }
+        }
+
+        let result =  utils.isNonNull(locationActivities) ? 
+            _.uniq([ ...locationActivities, ...incompleteActivities ]): 
+            _.map(incompleteActivities, ({ activity, image, title, subtitle, museum }) => ({
+                activity, image, title, subtitle, museum
+            }));
+        
+
+        if (result.length === 0) {
+            result = utils.isNonNull(locationActivities) ? 
+                _.uniq([ ...locationActivities, ...activities.manifest ]): 
+                _.map(activities.manifest, ({ activity, image, title, subtitle, museum }) => ({
+                    activity, image, title, subtitle, museum
+            }));
+        }
+
+        return result;
+    },
+
+    grantPoints: async (pageId, amount) => {
+        if (utils.isNull(pageId) || amount <= 0) {
+            throw new Error("Page id must be defined and amount must be positive integer");
+        }
+        const result = await db(tableName).where({ fb_page_id: pageId }).increment("points", amount);
+        return result;
     }
 
 }
@@ -111,3 +191,4 @@ module.exports = {
 //     // }
 
 // }
+

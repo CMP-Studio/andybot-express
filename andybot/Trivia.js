@@ -1,20 +1,22 @@
 // import db from "../db";
 
-
-const User = require("./User");
 const utils = require("../utils");
 const _ = require("lodash");
 const db = require("../db");
 const activities = require("./activities.json");
 
+function acedTrivia (triviaActivity) {
+    const state = triviaActivity;
+    if (((state.correct * 1.0) / state.total) >= 0.9) {
+        return true;
+    } else {
+        return false;
+    }
+}
+
 module.exports = {
 
     submitScore: async (fb_page_id, activity_id, correct, total) => {
-
-        const userExists = await User.exists(fb_page_id);
-        if (userExists === false) {
-            throw new Error("NoSuchUser");
-        }
 
         const triviaExists = utils.isNonNull(activities[activity_id]) && activity_id.indexOf("trivia") > -1;
         if (triviaExists === false) {
@@ -48,12 +50,13 @@ module.exports = {
         return acedTriviaSets.length;
     },
 
-    acedTrivia: (triviaActivity) => {
-        const state = triviaActivity;
-        if (((state.correct * 1.0) / state.total) >= 0.9) {
-            return true;
-        } else {
-            return false;
-        }
+    completed: async (pageId) => {
+        const triviaActivitiesCompleted = await db("trivia")
+        .select("activity_id")
+        .distinct('activity_id')
+        .where({
+            fb_page_id: pageId
+        });
+        return _.map(triviaActivitiesCompleted, (t) => t.activity_id);
     }
 }
