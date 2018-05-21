@@ -3,6 +3,9 @@ const utils = require("../utils");
 const Stamp = require("./Stamp");
 const User = require("./User");
 const activities = require("./activities.json");
+
+const ScavengerHunt = require("./ScavengerHunt");
+
 const _ = require("lodash");
 
 function isStampCode(code) {
@@ -11,20 +14,24 @@ function isStampCode(code) {
     return stampCodes.indexOf(code.ref) > -1;
 }
 
+function isScavengerHuntCode(code) {
+    console.log(code.ref);
+    return code.ref.indexOf('scavengerhunt') > -1;
+}
+
 function getScanLocation(scannedCode) {
     const scan = _.find(activities.scan, (s) => s.messenger_code === scannedCode.ref)
     return utils.isNonNull(scan) ? scan : null;
 }
 
-function isScavengerHuntCode(code) {
-    return;
-}
 
 module.exports = {
     scanCode: async (pageId, code) => {
+        const user = await User.get(pageId);
         const scannedCode = codes[String(code)];
         if (utils.isNonNull(scannedCode)) {
             let stamp;
+            let scavengerhunt;
             let activity;
 
 
@@ -48,21 +55,26 @@ module.exports = {
                 }
             }
 
+            // 3. Check for scavenger hunt scan
+            if (isScavengerHuntCode(scannedCode)) {
+                console.log("Got scavengerhunt code");
+                try {
+                    scavengerhunt = await ScavengerHunt.clueFound(pageId, scan);
+                    return { code: scannedCode, scavengerhunt, scan };
+                } catch (err) {
+                    scavengerhunt = { error: err.message };
+                    return { code: scannedCode, scavengerhunt, scan };
+                }
+            }
 
-
-            // // 3. Check for scavenger hunt scan
-            // if (isScavengerHuntCode(scannedCode)) {
-            //     return;
-            // }
-
-            // // 4. Return activity-trigger if necessary TODO
-
-            return;
         }
         return null;
 
     }
 }
+
+
+
 // // {
 // //     type: "checkin",
 // //     granted: true,

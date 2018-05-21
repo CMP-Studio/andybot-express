@@ -25,9 +25,6 @@ module.exports = {
                 updated_at: currentTimeStamp
             });
         } else {
-            // Make sure the last checkin was longer thatn 24 hours ago.
-
-            // Make sure you can scan multiple times
             if (requestedStamp.multiple === false) {
                 throw new Error("ScanLimitReached");
             }

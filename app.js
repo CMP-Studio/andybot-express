@@ -10,6 +10,7 @@ const Poll = require("./andybot/Poll");
 const Schedule = require("./andybot/Schedule");
 const Trivia = require("./andybot/Trivia");
 const Achievement = require("./andybot/Achievement");
+const ScavengerHunt = require("./andybot/ScavengerHunt");
 
 app.use(cors())
 app.use(bodyParser.json());
@@ -137,6 +138,19 @@ app.post("/achievement/progress", async (req, res) => {
     try {
         const achievementProgress = await Achievement.progress(req.body.fb_page_id);
         res.json(achievementProgress);
+    } catch (err){
+        console.error(err);
+        res.json({
+            error: err.message
+        });
+    }
+})
+
+
+app.post("/scavengerhunt/getHint", async (req, res) => {
+    try {
+        const hint = await ScavengerHunt.getHint(req.body.clue_number);
+        res.json(hint);
     } catch (err){
         console.error(err);
         res.json({

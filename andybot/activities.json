@@ -1710,6 +1710,78 @@
             "location": "CMNH",
             "type": "welcome",
             "followup": "Thanks for the ride! Want to try out some trivia?"
+        },
+        {
+            "messenger_code": "scavengerhunt-1",
+            "location": "CMNH",
+            "type": "scavengerhunt",
+            "trigger": 1
+        },
+        {
+            "messenger_code": "scavengerhunt-2",
+            "location": "CMNH",
+            "type": "scavengerhunt",
+            "trigger": 2
+        },
+        {
+            "messenger_code": "scavengerhunt-3",
+            "location": "CMNH",
+            "type": "scavengerhunt",
+            "trigger": 3
+        },
+        {
+            "messenger_code": "scavengerhunt-4",
+            "location": "CMNH",
+            "type": "scavengerhunt",
+            "trigger": 4
+        },
+        {
+            "messenger_code": "scavengerhunt-5",
+            "location": "CMNH",
+            "type": "scavengerhunt",
+            "trigger": 5
+        },
+        {
+            "messenger_code": "scavengerhunt-6",
+            "location": "CMNH",
+            "type": "scavengerhunt",
+            "trigger": 6
+        },
+        {
+            "messenger_code": "scavengerhunt-7",
+            "location": "CMNH",
+            "type": "scavengerhunt",
+            "trigger": 7
+        },
+        {
+            "messenger_code": "scavengerhunt-8",
+            "location": "CMNH",
+            "type": "scavengerhunt",
+            "trigger": 8
+        },
+        {
+            "messenger_code": "scavengerhunt-9",
+            "location": "CMNH",
+            "type": "scavengerhunt",
+            "trigger": 9
+        },
+        {
+            "messenger_code": "scavengerhunt-10",
+            "location": "CMNH",
+            "type": "scavengerhunt",
+            "trigger": 10
+        },
+        {
+            "messenger_code": "scavengerhunt-11",
+            "location": "CMNH",
+            "type": "scavengerhunt",
+            "trigger": 10
+        },
+        {
+            "messenger_code": "scavengerhunt-0",
+            "location": "CMNH",
+            "type": "scavengerhunt",
+            "trigger": 0
         }
     ]
 }
