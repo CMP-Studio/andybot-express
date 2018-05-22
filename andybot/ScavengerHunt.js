@@ -80,31 +80,34 @@ module.exports = {
 const scavengerhunt = [
 {
 clue: `
-
-This hunt starts at the top
-And works its way down, Look for the oldest artifacts around
-
-
-We travel to a civilization hot and old, With dog-headed gods and coffins wrapped in gold
+This hunt starts at the top,
+And works its way down, look for the oldest objects around.
 
 
-Head to the back, find the burial room, Your first destination will look like a tomb        
+We travel to a civilization hot and old, with dog-headed gods and coffins of gold.
 
 
+Head to the back, find the burial room.
+Your destination will look like a tomb. 
 `,
 hint: "You’ll find what you are looking for in the Walton Hall of Ancient Egypt.",
 foundit: "The Chantress of Amun was the very first piece added to the museum.  Check out the accession number!"
 },
 {
-clue: `Your next stop will help you cool off!Take a selfie with the Polar Bear!`,
+clue: `Your next stop will help you cool off! Take a selfie with the Polar Bear!`,
 hint: "You’ll find what you are looking for in Polar World: The Wyckoff Hall of Arctic Life.",
 foundit: "Polar bears sometimes cover their nose with their paw to help them hide in the white snow!"
 },
 {
-clue: `Just like Dad-jokes, the next spot is corny.
+clue: `
+Just like Dad-jokes, the next spot is corny.
+
+
 Don’t get too a-maized, but there are two spots where you can practice your corn grinding skills.
 Shucks, you might have to stalk through the rows of the exhibit before the answer pops out at you.
-Talk it over with your team. They’re all ears.       
+
+
+Talk it over with your team. They’re all ears. 
 `,
 hint: "You’ll find what you are looking for in the Alcoa Foundation Hall of American Indians.",
 foundit: "Punderful work!"
@@ -119,9 +122,11 @@ foundit: "I wonder what’s behind the other small door back there?"
 },
 {
 clue: `It’s finally time to see the dinosaurs.
-Take a right at the end of bird hall and travel to prehistoric times at the 3rd floor jurassic overlook.
+Take a right at the end of Bird Hall and travel to prehistoric times at the 3rd Floor Jurassic Overlook.
+
 
 From there, how many dinosaur skeletons can you see?
+
 
 If you think it’s 4, head to the Alaskan Brown Bear
 If you think it’s 10, head to the Badger.         
@@ -139,7 +144,7 @@ On your way, you may catch a glimpse of giant whale jaws and teeth.
 A mouth that big must need a lot of toothpaste!
 `,
 hint: "You’ll find what you are looking for in Botany Hall, but not in a display case!",
-foundit: "Whales don’t actually brush their teeth.  Seems fishy to me…"
+foundit: "Whales don’t actually brush their teeth. Seems fishy to me…"
 },
 
 {
@@ -152,12 +157,14 @@ foundit: "You made it to the tree, but did you spot a sneaky hunter?"
 },
 {
 clue: `You’re almost to the end!  But it’s not time for a break,
-Instead look for pelts, there is one that’s fake.   
+Instead look for pelts, there is one that’s fake.
+
+
 If you can’t see the code, here’s how you cope,
 Examine the pelt with a microscope.        
 `,
 hint: "Look for the microscopes in Discovery Basecamp.",
-foundit: "This was really tricky, nice sleuthing!"
+foundit: "This was tricky, nice sleuthing!"
 },
 {
 clue: `The hunt began with the first piece added to the collection, now look for the first dinosaur added by Andrew Carnegie.`,
