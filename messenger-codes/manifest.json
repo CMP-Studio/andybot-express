@@ -163,5 +163,10 @@
 		"uri": "https://scontent.xx.fbcdn.net/v/t39.8917-6/33670857_1961630997244285_3361216306060722176_n.png?_nc_cat=0&oh=08d3ad26a0fa35beecd1318bd94193ed&oe=5B7C13ED",
 		"ref": "parking-cmnh",
 		"description": "CMNH Parking"
+	},
+	"9b210d6c": {
+		"uri": "https://scontent.xx.fbcdn.net/v/t39.8917-6/33622041_2115647365131658_2979275855248752640_n.png?_nc_cat=0&oh=5d4b5a3ee78ca1a3e02c630b80ae291f&oe=5B87C610",
+		"ref": "parking-csc",
+		"description": "CSC Parking"
 	}
 }
