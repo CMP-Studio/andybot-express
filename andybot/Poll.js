@@ -1,8 +1,8 @@
+const User = require("./User");
 const db = require("../db");
 const utils = require("../utils");
 const activities = require("./activities.json");
 const _ = require("lodash");
-const User = require("./User");
 module.exports = {
 
     getResponsesForQuestion: async (activity_id, question_number) => {
@@ -35,10 +35,6 @@ module.exports = {
             || utils.isNull(pollActivityQuestion.choices[answerIndex])) {
             throw new Error("NoSuchChoice");
         }
-        const userExists = await User.exists(fb_page_id);
-        if (userExists === false) {
-            throw new Error("BadArguments");
-        }
 
         const existingResponse = await db("poll_response").select("*").where({
             fb_page_id, activity_id, question_number
@@ -52,14 +48,13 @@ module.exports = {
             const submittedResponse = await db("poll_response").insert({
                 fb_page_id, activity_id, question_number, response: answerIndex
             });
-
-            if (isNonNull(submittedResponse) && submittedResponse.length > 0) {
+            if (utils.isNonNull(submittedResponse) && submittedResponse.rowCount > 0) {
                 return true;
             } else {
                 return false;
             }
         } catch (err) {
-            throw new Error("InternalError");
+            throw new Error(err.message || "InternalError");
         }
     },
 
