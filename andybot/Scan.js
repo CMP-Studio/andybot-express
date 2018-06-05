@@ -21,7 +21,6 @@ function isStampCode(code) {
 }
 
 function isScavengerHuntCode(code) {
-    console.log(code.ref);
     return code.ref.indexOf('scavengerhunt') > -1;
 }
 
@@ -63,7 +62,6 @@ module.exports = {
 
             // 3. Check for scavenger hunt scan
             if (isScavengerHuntCode(scannedCode)) {
-                console.log("Got scavengerhunt code");
                 try {
                     scavengerhunt = await ScavengerHunt.clueFound(pageId, scan);
                     return { code: scannedCode, scavengerhunt, scan };
