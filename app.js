@@ -53,9 +53,21 @@ app.post('/userExists', async (req, res) => {
 
 app.post('/avaliableActivities', async (req, res) => {
     try {
-        console.log(req.body.page_id)
         const avaliableActivities = await User.avaliableActivities(req.body.page_id);
         res.json(avaliableActivities);
+    } catch (err){
+        console.log(err);
+        res.json({
+            error: err.message
+        });
+    }
+});
+
+app.post('/avaliableEvents', async (req, res) => {
+    try {
+        console.log(req.body.page_id)
+        const avaliableEvents = await Schedule.events(req.body.page_id);
+        res.json(avaliableEvents);
     } catch (err){
         console.log(err);
         res.json({
