@@ -86,7 +86,9 @@ module.exports = {
 
         const user = await getUser(pageId);
         let locationActivities;
-        if (utils.isNonNull(user.state.location)) {
+        if (utils.isNonNull(user) && 
+            utils.isNonNull(user.state) &&
+            utils.isNonNull(user.state.location)) {
             const threeHoursMs = 3 * 60 * 60 * 1000;
             const currTimestamp = (new Date()).getTime();
             const checkinTime = user.state.last_scan_timestamp;

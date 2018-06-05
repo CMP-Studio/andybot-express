@@ -1615,7 +1615,10 @@
         {
             "messenger_code": "stamp-event-adults",
             "location": "CMNH",
-            "type": "event"
+            "type": "event",
+            "trigger": [
+                "poll-something"
+            ]
         },
         {
             "messenger_code": "stamp-event-trivianight",
@@ -1696,7 +1699,7 @@
             "type": "welcome"
         },
         {
-            "messenger_code": "lunch-cmnh",
+            "messenger_code": "activities-lunchtime",
             "location": "CMNH",
             "type": "welcome",
             "trigger": [
@@ -1710,6 +1713,11 @@
             "location": "CMNH",
             "type": "welcome",
             "followup": "Thanks for the ride! Want to try out some trivia?"
+        },
+        {
+            "messenger_code": "parking-csc",
+            "location": "CSC",
+            "type": "welcome"
         },
         {
             "messenger_code": "scavengerhunt-1",
@@ -1775,13 +1783,19 @@
             "messenger_code": "scavengerhunt-11",
             "location": "CMNH",
             "type": "scavengerhunt",
-            "trigger": 10
+            "trigger": 11
         },
         {
             "messenger_code": "scavengerhunt-0",
             "location": "CMNH",
             "type": "scavengerhunt",
             "trigger": 0
+        },
+        {
+            "messenger_code": "scavengerhunt-12",
+            "location": "CMNH",
+            "type": "scavengerhunt",
+            "trigger": 12
         }
     ]
 }

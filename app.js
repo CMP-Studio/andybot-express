@@ -1,3 +1,5 @@
+require('dotenv').config()
+
 const express = require('express');
 const app = express();
 const cors = require('cors')
@@ -51,9 +53,11 @@ app.post('/userExists', async (req, res) => {
 
 app.post('/avaliableActivities', async (req, res) => {
     try {
+        console.log(req.body.page_id)
         const avaliableActivities = await User.avaliableActivities(req.body.page_id);
         res.json(avaliableActivities);
     } catch (err){
+        console.log(err);
         res.json({
             error: err.message
         });

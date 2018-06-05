@@ -1,3 +1,5 @@
+require('dotenv').config();
+
 const config = {
     test: {
         client: "sqlite",
@@ -18,11 +20,11 @@ const config = {
         client: "pg",
         version: "9.6.6",
         connection: {
-            host: process.env.PG_HOST || 'bots.chcahw88vxf8.us-east-2.rds.amazonaws.com',
+            host: process.env.PG_HOST,
             port: process.env.PG_PORT || 5432,
-            user: process.env.PG_USER || 'studio',
-            password: process.env.PG_PASSWORD || 'studioadmin',
-            database: process.env.PG_ANDYBOT_DB || 'andybot'
+            user: process.env.PG_USER,
+            password: process.env.PG_PASSWORD,
+            database: process.env.PG_ANDYBOT_DB
         },
         migrations: {
             directory: "./db/migrations",

@@ -24,7 +24,7 @@ exports.up = async function (knex) {
             table.string('response').notNullable()
             table.integer('question_number').notNullable()
             table.timestamps(false, true)
-        }), 
+        }),
 
         knex.schema.createTable('achievement', function (table) {
             table.string('fb_page_id').references('fb_page_id').inTable('user')
@@ -38,6 +38,12 @@ exports.up = async function (knex) {
             table.string('fb_page_id').references('fb_page_id').inTable('user')
             table.string('stamp_id').notNullable().index()
             table.integer('count').notNullable().defaultTo(1);
+            table.timestamps(false, true)
+        }),
+
+        knex.schema.createTable('scavengerhunt', function (table) {
+            table.string('fb_page_id').references('fb_page_id').inTable('user')
+            table.integer('clue_number').notNullable().index()
             table.timestamps(false, true)
         })
 

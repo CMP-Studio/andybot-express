@@ -10,7 +10,7 @@ function pickNextClue(atClueNumber, clues) {
 
 module.exports = {
     clueFound: async (pageId, scan) => {
-
+        console.log("Clue found");
         // const scan = _.find(activities.scan, (s) => s.messenger_code === scannedCode.ref );
         let nextClue;
         let clueAlreadyFound;
@@ -24,6 +24,12 @@ module.exports = {
             if (scan.trigger === 0) {
                 // This is the initial scan, no need to save this.
                 nextClue = { clue: scavengerhunt[0].clue, clueNumber: 0 };
+            } else if (scan.trigger === scavengerhunt.length) {
+                nextClue = {
+                    lastClue: true,
+                    clueNumber: scavengerhunt.length,
+                    followup: scavengerhunt[scan.trigger - 1].foundit,
+                }; 
             } else if (scan.trigger > 0) {
 
                 if  (cluesAlreadyFound.indexOf(scan.trigger) === -1) {
@@ -37,9 +43,10 @@ module.exports = {
                     clueAlreadyFound = true;
                 }
 
-                console.log("Clues already found", cluesAlreadyFound);
                 // Pick the next clue that makes sense
-                const nextClueNumber = pickNextClue(scan.trigger, cluesAlreadyFound);
+                // console.log("Scanned", scan.trigger - 1)
+                const nextClueNumber = scan.trigger;
+
                 if (nextClueNumber === null) {
                     nextClue = null;
                 } else {
