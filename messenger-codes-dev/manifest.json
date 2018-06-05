@@ -73,5 +73,10 @@
 		"uri": "https://scontent.xx.fbcdn.net/v/t39.8917-6/34618905_1713221295428885_2056516343749935104_n.png?_nc_cat=0&oh=7447ab61f0a82013ab3faec239e5dc73&oe=5B7DD605",
 		"ref": "stamp-checkin-oakland",
 		"description": "Oakland Checkin"
+	},
+	"172fea72": {
+		"uri": "https://scontent.xx.fbcdn.net/v/t39.8917-6/34442673_2021569484542132_8199125201225515008_n.png?_nc_cat=0&oh=9d73863ab80ddd861fe4973d33eec0db&oe=5BBDD9AE",
+		"ref": "parking-cmnh",
+		"description": "Oakland Parking"
 	}
 }
