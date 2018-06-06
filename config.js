@@ -11,6 +11,12 @@ const config = {
     },
     test: {
         ...defaultConfig,
+    },
+    production: {
+	...defaultConfig,
+    },
+    sam: {
+	...defaultConfig,
     }
 };
 
