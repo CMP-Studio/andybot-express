@@ -42,7 +42,7 @@ module.exports = {
 
             // 1. Do a location. Set location.
             const scan = getScanLocation(scannedCode);
-            if (utils.isNonNull(scan)) {
+            if (utils.isNonNull(scan) && utils.isNonNull(scan.location)) {
                 await User.setState(pageId, {
                     location: scan.location,
                     last_scan_timestamp: (new Date()).getTime()
@@ -70,6 +70,7 @@ module.exports = {
                     return { code: scannedCode, scavengerhunt, scan };
                 }
             }
+            return { code: scannedCode, scan };
 
         }
         return null;
