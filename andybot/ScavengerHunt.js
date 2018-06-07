@@ -69,6 +69,10 @@ module.exports = {
             return { hint: scavengerhunt[clueNumber].hint };
         }
     }
+
+    numClues: async() => {
+        return scavengerhunt.length;
+    }
 }
 
 const scavengerhunt = [

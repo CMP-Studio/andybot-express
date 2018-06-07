@@ -1,34 +1,21 @@
 const Poll = require("../Poll");
 const _ = require("lodash");
- 
+
+const activities = require('../activities.json');
+const numActivities = _.filter(Object.keys(activities), (s) => s.indexOf('poll') > -1).length;
+
 const PollCompletion = {
     id: "poll-completion",
     displayName: "Opinionated",
     description: "Participate in the polls and tell us what you think.",
-    image: "andy-quiz-wiz.png",
-    splash_image: "andy-quiz-wiz.png",
-    maxProgress: 10,
+    image: "achievement-poll.png",
+    splash_image: "andy-rock-vote.png",
+    reward: 5,
+    maxProgress: numActivities,
     progress: async (pageId) => {
-        const completedSets = await Poll.completed(pageId);
-        return completedSets.length;
+        const completedPolls = await Poll.completed(pageId);
+        return completedPolls.length;
     },
-    tiers: {
-        1: {
-            displayName: "Opinionated",
-            description: "Complete at least 1 poll",
-            reward: 10
-        },
-        5: {
-            displayName: "Contributor",
-            description: "Complete at least 5 polls",
-            reward: 50
-        },
-        10: {
-            displayName: "Outspoken",
-            description: "Complete 10 polls",
-            reward: 100
-        }
-    }
 };
 
 module.exports = PollCompletion;

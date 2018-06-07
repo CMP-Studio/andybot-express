@@ -1,4 +1,8 @@
 const Trivia = require("../Trivia");
+const activities = require('../activities.json');
+const _ = require("lodash");
+
+const numActivities = _.filter(Object.keys(activities), (s) => s.indexOf('trivia') > -1).length;
 
 const SmartCookie = {
     id: "smart-cookie",
@@ -6,18 +10,12 @@ const SmartCookie = {
     description: "Do you think you have what it takes to ace every trivia set?",
     image: "achievement-smart-cookie.png",
     splash_image: "andy-smart-cookie.png",
-    maxProgress: 1,
+    reward: 5,
+    maxProgress: numActivities,
     progress: async (pageId) => {
         const acedSets = await Trivia.numberOfAcedTriviaSetsForUser(pageId);
-        return Math.min(acedSets, 1);
+        return acedSets.length;
     },
-    tiers: {
-        1: {
-            displayName: "Smart Cookie",
-            description: "Get over 90% on a quiz",
-            reward: 10
-        }
-    }
 };
 
 module.exports = SmartCookie;
