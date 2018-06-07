@@ -12,7 +12,7 @@ const EarlyBird = require("./achievements/EarlyBird");
 const Hunt = require("./achievements/ScavengerHunt");
 
 
-const avaliableAchievements = [ SmartCookie, QuizWhiz, MuseumVisits, PollCompletion, EarlyBird, Hunt ];
+const avaliableAchievements = [ QuizWhiz, SmartCookie, PollCompletion, Hunt, MuseumVisits, EarlyBird ];
 const tableName = "achievement";
 
 function avaliable() {
