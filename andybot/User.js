@@ -102,7 +102,7 @@ module.exports = {
         let result =  utils.isNonNull(locationActivities) ? 
             _.uniq([ ...locationActivities, ...incompleteActivities ]): 
             _.map(incompleteActivities, ({ activity, image, title, subtitle, museum }) => ({
-                activity, image, title, subtitle, museum
+                activity, image, title, subtitle, museum, type: title.split('|')[0],
             }));
         
 
@@ -110,7 +110,7 @@ module.exports = {
             result = utils.isNonNull(locationActivities) ? 
                 _.uniq([ ...locationActivities, ...activities.manifest ]): 
                 _.map(activities.manifest, ({ activity, image, title, subtitle, museum }) => ({
-                    activity, image, title, subtitle, museum
+                    activity, image, title, subtitle, museum, type: title.split('|')[0],
             }));
         }
 
