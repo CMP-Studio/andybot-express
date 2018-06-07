@@ -16,6 +16,10 @@ module.exports = {
             cluesAlreadyFound = await db(tableName).select("*").where({
                 fb_page_id: pageId,
             });
+            cluesAlreadyFound = _.map(cluesAlreadyFound, (p) => p.clue_number );
+
+            console.log(cluesAlreadyFound);
+
             if (scan.trigger === 0) {
                 nextClue = {
                     clue: scavengerhunt[0].clue,
@@ -78,8 +82,7 @@ module.exports = {
 const scavengerhunt = [
 {
 number: 0,
-clue: `
-This hunt starts at the top,
+clue: `This hunt starts at the top,
 And works its way down, look for the oldest objects around.
 
 
