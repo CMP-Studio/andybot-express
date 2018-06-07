@@ -13,10 +13,10 @@ const config = {
         ...defaultConfig,
     },
     production: {
-	...defaultConfig,
+	   ...defaultConfig,
     },
     sam: {
-	...defaultConfig,
+	   ...defaultConfig,
     }
 };
 

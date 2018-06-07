@@ -14,7 +14,7 @@ const SmartCookie = {
     maxProgress: numActivities,
     progress: async (pageId) => {
         const acedSets = await Trivia.numberOfAcedTriviaSetsForUser(pageId);
-        return acedSets.length;
+        return acedSets;
     },
 };
 

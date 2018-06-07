@@ -5,6 +5,7 @@ const EarlyBird = {
     displayName: "Early Bird",
     description: "Check-in at a museum before noon.",
     image: "achievement-early-bird.png",
+    reward: 0,
     progress: async (pageId) => {
         const user = await User.get(pageId);
         if (user.state === undefined || user.state === null) {

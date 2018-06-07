@@ -8,6 +8,21 @@ function pickNextClue(atClueNumber, clues) {
 }
 
 module.exports = {
+    numCluesFound: async (pageId) => {
+        try {
+            cluesAlreadyFound = await db(tableName).select("*").where({
+                fb_page_id: pageId,
+            });
+            numCluesFound = cluesAlreadyFound.length;
+            console.log(numCluesFound);
+
+            return numCluesFound;
+        } catch (err) {
+            console.log("There was an err", err);
+            return 0;
+        }
+    },
+
     clueFound: async (pageId, scan) => {
         let nextClue;
         let clueAlreadyFound;
@@ -73,10 +88,6 @@ module.exports = {
             return { hint: scavengerhunt[clueNumber].hint };
         }
     }
-
-    numClues: async() => {
-        return scavengerhunt.length;
-    }
 }
 
 const scavengerhunt = [
@@ -126,7 +137,7 @@ While you’re there, don’t be gloomy and look at the floor,
 See the Section of Mystery and open the door.            
 `,
 hint: "You’ll find what you are looking for in Bird Hall.",
-foundit: "I wonder what’s behind the other small door back there?"
+foundit: "I do wonder what’s behind the other small door back there? But stay focused! Are you ready for the next clue?"
 },
 
 {
