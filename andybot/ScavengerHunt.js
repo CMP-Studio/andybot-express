@@ -109,7 +109,7 @@ foundit: "The Chantress of Amun was the very first piece added to the museum.  C
 
 {
 number: 1,
-clue: `Your next stop will help you cool off! Take a selfie with the Polar Bear!`,
+clue: `Your next stop will help you cool off! Say hello to the Polar Bear!`,
 hint: "You’ll find what you are looking for in Polar World: The Wyckoff Hall of Arctic Life.",
 foundit: "Polar bears sometimes cover their nose with their paw to help them hide in the white snow!"
 },
