@@ -8,7 +8,7 @@ const striptags = require('striptags');
 async function getCalendarEvents() {
 
     let timeMin = new Date();
-    let timeMax = new Date(new Date().getTime() + (60 * 24 * 60 * 60 * 1000));
+    let timeMax = new Date(new Date().getTime() + (7 * 24 * 60 * 60 * 1000));
 
     try {
         // Fetch events from google calendar
@@ -20,7 +20,7 @@ async function getCalendarEvents() {
             timeMin: timeMin,
             timeMax: timeMax,
         });
-
+        console.log(calendar.data.items);
         return calendar.data.items;
     } catch (err) {
         console.error(err);
