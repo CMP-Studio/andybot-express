@@ -1,5 +1,3 @@
-// import db from "../db";
-
 const utils = require("../utils");
 const _ = require("lodash");
 const db = require("../db");
@@ -7,7 +5,7 @@ const activities = require("./activities.json");
 
 function acedTrivia (triviaActivity) {
     const state = triviaActivity;
-    if (((state.correct * 1.0) / state.total) >= 0.9) {
+    if (state.correct === state.total) {
         return true;
     } else {
         return false;
@@ -29,6 +27,26 @@ module.exports = {
             throw new Error("BadArguments");
         }
 
+        const existingTrivia = await db("trivia").select("*").where({
+            fb_page_id, activity_id
+        });
+
+        if (existingTrivia !== null && existingTrivia.length > 0) {
+            if (correct > existingTrivia[0].correct) {
+                try {
+                    const updateRow = await db("trivia").select("*")
+                    .where({ fb_page_id, activity_id})
+                    .update({ correct });
+                    return true;
+                } catch (err) {
+                    console.error(err);
+                    throw new Error("InternalError");
+                }
+            } else {
+                return true;
+            }
+        }
+
         try {
             const insertRowIds = await db("trivia").insert({
                 fb_page_id, activity_id, correct, total
@@ -42,7 +60,8 @@ module.exports = {
 
     numberOfAcedTriviaSetsForUser: async (pageId) => {
         const triviaActivitiesCompleted = await db("trivia")
-        .select("*")
+        .select("activity_id")
+        .distinct('activity_id')
         .where({
             fb_page_id: pageId
         });
