@@ -14,7 +14,7 @@ const PollCompletion = {
     maxProgress: numActivities,
     progress: async (pageId) => {
         const completedPolls = await Poll.completed(pageId);
-        return completedPolls.length;
+        return Math.min(completedPolls.length, numActivities);
     },
 };
 

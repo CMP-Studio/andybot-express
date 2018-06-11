@@ -14,7 +14,7 @@ const QuizWhiz = {
     maxProgress: numActivities,
     progress: async (pageId) => {
         const completedSets = await Trivia.completed(pageId);
-        return completedSets.length;
+        return Math.min(completedSets.length, numActivities);
     },
 
 };

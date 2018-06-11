@@ -11,7 +11,7 @@ const Hunt = {
     maxProgress: 11,
     progress: async (pageId) => {
         const found = await ScavengerHunt.numCluesFound(pageId);
-        return found;
+        return Math.min(found, 11);
     },
 };
 
