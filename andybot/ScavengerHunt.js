@@ -44,8 +44,10 @@ module.exports = {
             // Create a list of remaining objects before this clue (not including a frame which doesn't need to be found to win)
             prevObjectsRemaining = _.filter(clueNumbers, (objectNum) => { 
                 console.log("object Num: " + objectNum);
+                console.log(objectNum !== 0);
                 console.log(!objectsFound.includes(objectNum));
-                objectNum !== 0 && !objectsFound.includes(objectNum) 
+                console.log(objectNum !== 0 && !objectsFound.includes(objectNum));
+                return objectNum !== 0 && !objectsFound.includes(objectNum);
             });
             console.log("Prev objects: ");
             console.log(prevObjectsRemaining);
