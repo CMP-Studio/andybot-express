@@ -25,7 +25,7 @@ module.exports = {
         let objectsRemaining;
         let nextClueNumber;
 
-        let huntResponse;
+        let huntResponse = {};
 
         let objectScanned = parseInt(scan.trigger);
 
@@ -51,6 +51,7 @@ module.exports = {
                 objectsFound.push(objectScanned);
             } else {
                 //If it was already found...
+                console.log('ALREADY FOUND');
                 huntResponse.alreadyFound = true;  
             }
 
