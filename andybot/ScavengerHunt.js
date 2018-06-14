@@ -65,9 +65,9 @@ module.exports = {
                 huntResponse.huntComplete = true;
             }
 
-            // If they found an object, determine which found it to show
+            // If they found an object, determine which found
             if (objectScanned >= 1 && objectScanned <= 11) {
-                huntResponse.foundIt = scavengerhunt[objectScanned - 1];
+                huntResponse.foundIt = scavengerhunt[objectScanned - 1].foundit;
             }
 
             // Determine which clue to send them next            
