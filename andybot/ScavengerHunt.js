@@ -75,7 +75,7 @@ module.exports = {
                 let nextClue = objectScanned;
                 let loopCount = 0;
                 let loopMax = 15;
-                while (!objectsRemaining.include(nextClue) && loopCount <= loopMax) {
+                while (!objectsRemaining.includes(nextClue) && loopCount <= loopMax) {
                     nextClue = (nextClue + 1) % 11
                     loopCount++;
                 }
