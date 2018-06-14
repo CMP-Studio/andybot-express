@@ -184,10 +184,12 @@ const scavengerhunt = [
 {
     number: 8,
     clue: `You’re almost to the end!  But it’s not time for a break,
+    
     Instead look for pelts, there is one that’s fake.
 
 
     If you can’t see the code, here’s how you cope,
+
     Examine the pelt with a microscope.        
     `,
     hint: "Look for the microscopes in Discovery Basecamp.",
