@@ -38,8 +38,15 @@ module.exports = {
                 huntResponse.firstScan = true;
             }
 
+            console.log("Objects found");
+            console.log(objectsFound);
+
             // Create a list of remaining objects before this clue (not including a frame which doesn't need to be found to win)
-            prevObjectsRemaining = _.filter(clueNumbers, (objectNum) => { objectNum !== 0 && !objectsFound.includes(objectNum) });
+            prevObjectsRemaining = _.filter(clueNumbers, (objectNum) => { 
+                console.log("object Num: " + objectNum);
+                console.log(!objectsFound.includes(objectNum));
+                objectNum !== 0 && !objectsFound.includes(objectNum) 
+            });
             console.log("Prev objects: ");
             console.log(prevObjectsRemaining);
             console.log(clueNumbers);
