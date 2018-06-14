@@ -40,6 +40,9 @@ module.exports = {
 
             // Create a list of remaining objects before this clue (not including a frame which doesn't need to be found to win)
             prevObjectsRemaining = _.filter(clueNumbers, (objectNum) => { objectNum !== 0 && !objectsFound.includes(objectNum) });
+            console.log("Prev objects: ");
+            console.log(prevObjectsRemaining);
+            console.log(clueNumbers);
 
             // If you scanned a code for the first time, record it in the database (even the a frame)
             if (objectsFound.indexOf(objectScanned) === -1) {
@@ -57,11 +60,15 @@ module.exports = {
 
             // Create a list of remaining objects (not including a frame which doesn't need to be found to win)
             objectsRemaining = _.filter(clueNumbers, (objectNum) => { objectNum !== 0 && !objectsFound.includes(objectNum) });
+            console.log("objects: ");
+            console.log(objectsRemaining);
+            console.log(clueNumbers);
 
             // Determine if they just finished the hunt
             if (objectsRemaining.length === 0 && prevObjectsRemaining.length !== 0) {
                 huntResponse.lastScan = true;
             } else if (objectsRemaining.length === 0 && prevObjectsRemaining.length === 0) {
+                console.log("Hunt already complete")
                 huntResponse.huntComplete = true;
             }
 
