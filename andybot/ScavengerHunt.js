@@ -9,7 +9,8 @@ module.exports = {
             cluesAlreadyFound = await db(tableName).select("*").where({
                 fb_page_id: pageId,
             });
-            numCluesFound = cluesAlreadyFound.length;
+            let objectsFound = _.filter(cluesAlreadyFound, (p) => { return parseInt(p.clue_number) !== 0 });
+            numCluesFound = objectsFound.length;
 
             return numCluesFound;
         } catch (err) {
