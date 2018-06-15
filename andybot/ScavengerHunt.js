@@ -72,17 +72,19 @@ module.exports = {
 
             // Determine which clue to send them next       
             if (objectsRemaining.length > 0) {
-                let nextClue = -1;
-                for(var i = 0; i < 11; ++i){
-                    tryNextClue = (objectScanned + i) % 11
-                    if(objectsRemaining.includes(tryNextClue)){
-                        nextClue = tryNextClue;
+                let nextObject = -1;
+                let numObjects = 12;
+                for(var i = 0; i < numObjects; ++i){
+                    tryNextObject = (objectScanned + i) % numObjects
+                    if(objectsRemaining.includes(tryNextObject)){
+                        nextObject = tryNextObject;
                         break;
                     }
                 }
-                if (nextClue != -1) {
-                    huntResponse.nextClue = scavengerhunt[nextClue-1].clue;
-                    huntResponse.nextClueNumber = nextClue-1;
+                if (nextObject != -1) {
+                    let nextClue = nextObject - 1;
+                    huntResponse.nextClue = scavengerhunt[nextClue].clue;
+                    huntResponse.nextClueNumber = nextClue;
                 }
             }
                 
