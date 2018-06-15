@@ -186,8 +186,8 @@ const scavengerhunt = [
 
 {
     number: 8,
-    clue: `You’re almost to the end!  But it’s not time for a break,
-    
+    clue: `Now, it’s not time for a break,
+
     Instead look for pelts, there is one that’s fake.
 
 
