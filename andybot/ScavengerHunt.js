@@ -70,17 +70,18 @@ module.exports = {
                 huntResponse.foundIt = scavengerhunt[objectScanned - 1].foundit;
             }
 
-            // Determine which clue to send them next            
+            // Determine which clue to send them next       
             if (objectsRemaining.length > 0) {
-                let nextClue = objectScanned;
-                let loopCount = 0;
-                let loopMax = 15;
-                while (!objectsRemaining.includes(nextClue) && loopCount <= loopMax) {
-                    nextClue = (nextClue + 1) % 11
-                    loopCount++;
+                let nextClue = -1;
+                for(var i = 0; i < 11; ++i){
+                    tryNextClue = (objectScanned + i) % 11
+                    if(objectsRemaining.includes(tryNextClue)){
+                        nextClue = tryNextClue;
+                        break;
+                    }
                 }
-                if (loopCount !== loopMax) {
-                    huntResponse.nextClue = scavengerhunt[nextClue].clue;
+                if (nextClue != -1) {
+                    huntResponse.nextClue = scavengerhunt[nextClue-1].clue;
                     huntResponse.nextClueNumber = nextClue;
                 }
             }
