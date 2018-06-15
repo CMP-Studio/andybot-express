@@ -94,7 +94,7 @@ module.exports = {
             const checkinTime = user.state.last_scan_timestamp;
             if (currTimestamp - checkinTime <= threeHoursMs) {
                 locationActivities = _.filter(activities.manifest, (a) => {
-                    return a.location === user.state.location
+                    return a.location === user.state.location && completed.indexOf(a.activity) <= -1
                 });
             }
         }
