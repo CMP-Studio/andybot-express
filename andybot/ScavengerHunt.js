@@ -82,7 +82,7 @@ module.exports = {
                 }
                 if (nextClue != -1) {
                     huntResponse.nextClue = scavengerhunt[nextClue-1].clue;
-                    huntResponse.nextClueNumber = nextClue;
+                    huntResponse.nextClueNumber = nextClue-1;
                 }
             }
                 
