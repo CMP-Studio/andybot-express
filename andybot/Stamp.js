@@ -31,7 +31,7 @@ module.exports = {
 
             const lastCheckin = new Date(existingScanRows[0].updated_at).getTime();
             const now = currentTimeStamp.getTime();
-            const oneDayMs = 24 * 60 * 60 * 1000;
+            const oneDayMs = 12 * 60 * 60 * 1000;
             const oneMinMs = 60 * 1000;
             const timeLimit = process.env.NODE_ENV === 'development' ? oneMinMs : oneDayMs;
             if (now - lastCheckin < timeLimit) {
