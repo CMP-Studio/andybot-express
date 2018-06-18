@@ -5,6 +5,7 @@ const activities = require("./activities.json");
 
 function acedTrivia (triviaActivity) {
     const state = triviaActivity;
+    console.log(state);
     if (state.correct === state.total) {
         return true;
     } else {
@@ -65,7 +66,7 @@ module.exports = {
         .where({
             fb_page_id: pageId
         });
-        const acedTriviaSets = _.filter(triviaActivitiesCompleted, acedTrivia);
+        const acedTriviaSets = _.filter(triviaActivitiesCompleted, (t) => { return acedTrivia(t) });
         return acedTriviaSets.length;
     },
 
