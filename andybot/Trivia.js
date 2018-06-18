@@ -61,7 +61,7 @@ module.exports = {
 
     numberOfAcedTriviaSetsForUser: async (pageId) => {
         const triviaActivitiesCompleted = await db("trivia")
-        .select("activity_id")
+        .select("*")
         .distinct('activity_id')
         .where({
             fb_page_id: pageId
