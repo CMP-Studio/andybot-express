@@ -5,7 +5,6 @@ const activities = require("./activities.json");
 
 function acedTrivia (triviaActivity) {
     const state = triviaActivity;
-    console.log(state);
     if (state.correct === state.total) {
         return true;
     } else {
