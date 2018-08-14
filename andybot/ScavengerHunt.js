@@ -158,19 +158,14 @@ const scavengerhunt = [
     Take a right at the end of Bird Hall and travel to prehistoric times at the 3rd Floor Jurassic Overlook.        
     `,
     hint: "Look for a scan code overlooking Dino Hall to get your next clue",
-    foundit: `Dinomite! You found the Dino Hall overlook.`
+    foundit: `you found it!  How many dino can you see from there?  Some are even up in the air!`
 },
 
 {
     number: 6,
-    clue: `
-    Look down from the 3rd Floor Jurrassic Overlook. How many dinosaur skeletons can you see?
-
-
-    If you think it’s 4, head to the Alaskan Brown Bear
-    If you think it’s 10, head to the Badger.         
+    clue: `He stays on the ground, but he doesn’t mind. Can you search for a badger and see what you find?        
     `,
-    hint: "After counting, head downstairs to the Hall of North American Wildlife to see if you’re correct!",
+    hint: "Head downstairs to the Hall of North American Wildlife all the way to the back corner!",
     foundit: `You found the Badger! Scientists generally agree that there are 3 species of badger. They do not count the infamous honey badger, because it is genetically and genealogically distant from the others. Something tells me honey badger don’t care.`
 },
 
@@ -186,14 +181,11 @@ const scavengerhunt = [
 
 {
     number: 8,
-    clue: `Now, it’s not time for a break,
-
-    Instead look for pelts, there is one that’s fake.
-
-
+    clue: `You’re almost to the end!  But it’s not time for a break.
+    Instead look for pelts—there is one that’s fake.
+ 
     If you can’t see the code, here’s how you cope,
-
-    Examine the pelt with a microscope.        
+    Examine the pelt in Discovery Basecamp with a microscope.
     `,
     hint: "Look for the microscopes in Discovery Basecamp.",
     foundit: "You found the microscopic code! That was tricky, nice sleuthing!"
