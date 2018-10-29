@@ -4,31 +4,15 @@ const db = require("../db");
 const _ = require("lodash");
 
 module.exports = {
-    numCluesFound: async (pageId) => {
-        try {
-            cluesAlreadyFound = await db(tableName).select("*").where({
-                fb_page_id: pageId,
-            });
-            let objectsFound = _.filter(cluesAlreadyFound, (p) => { return parseInt(p.clue_number) !== 0 });
-            numCluesFound = objectsFound.length;
-
-            return numCluesFound;
-        } catch (err) {
-            console.log("There was an err", err);
-            return 0;
-        }
-    },
 
     clueFound: async (pageId, scan) => {
-        let clueNumbers = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11]; // length = 12
+        let clueNumbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
         let objectsFound;
         let prevObjectsRemaining;
         let objectsRemaining;
         let nextClueNumber;
 
         let huntResponse = {};
-
-        let objectScanned = parseInt(scan.trigger);
 
         try {
             objectsFound = await db(tableName).select("*").where({ fb_page_id: pageId });
@@ -43,13 +27,13 @@ module.exports = {
             prevObjectsRemaining = _.filter(clueNumbers, (objectNum) => { return objectNum !== 0 && !objectsFound.includes(objectNum); });
 
             // If you scanned a code for the first time, record it in the database (even the a frame)
-            if (objectsFound.indexOf(objectScanned) === -1) {
+            if (objectsFound.indexOf(scan) === -1) {
                 const recordSaved = await db(tableName).insert({
                     fb_page_id: pageId,
-                    clue_number: objectScanned
+                    clue_number: scan
                 });
                 // When successfully recorded, add the scanned item to the local list
-                objectsFound.push(objectScanned);
+                objectsFound.push(scan);
             } else {
                 //If it was already found...
                 huntResponse.alreadyFound = true;  
@@ -66,16 +50,16 @@ module.exports = {
             }
 
             // If they found an object, determine which found
-            if (objectScanned >= 1 && objectScanned <= 11) {
-                huntResponse.foundIt = scavengerhunt[objectScanned - 1].foundit;
+            if (scan >= 1 && scan <= 10) {
+                huntResponse.foundIt = scavengerhunt[scan - 1].foundit;
             }
 
             // Determine which clue to send them next       
             if (objectsRemaining.length > 0) {
                 let nextObject = -1;
-                let numObjects = 12;
+                let numObjects = 10;
                 for(var i = 0; i < numObjects; ++i){
-                    tryNextObject = (objectScanned + i) % numObjects
+                    tryNextObject = (scan + i) % numObjects
                     if(objectsRemaining.includes(tryNextObject)){
                         nextObject = tryNextObject;
                         break;
@@ -92,9 +76,13 @@ module.exports = {
             console.log("There was an err", err);
             return { error: err.message };
         }
-
-        console.log(huntResponse);
         return huntResponse;
+    },
+
+    getClue: async (clueNumber) => {
+        if (clueNumber <= scavengerhunt.length) {
+            return { clue: scavengerhunt[clueNumber].clue };
+        }
     },
 
     getHint: async (clueNumber) => {
@@ -102,116 +90,103 @@ module.exports = {
             return { hint: scavengerhunt[clueNumber].hint };
         }
     },
+
+    getProgress: async (pageId) => {
+        try {
+            cluesAlreadyFound = await db(tableName).select("*").where({
+                fb_page_id: pageId,
+            });
+            let cluesFound = _.map(cluesAlreadyFound, (p) => { return parseInt(p.clue_number) });
+
+            return cluesFound;
+        } catch (err) {
+            console.log("There was an err", err);
+            return [];
+        }
+    },
+
+    clearProgress: async (pageId) => {
+        try {
+            console.log("trying to clear progress for user");
+            console.log(pageId);
+            const recordSaved = await db(tableName).where({ 'fb_page_id': pageId }).del();
+            return true;
+        } catch (err) {
+            console.log("There was an err", err);
+            return [];
+        }
+    }
+
 }
 
 const scavengerhunt = [
 {
     number: 1,
-    clue: `This hunt starts at the top,
-    And works its way down, look for the oldest objects around.
-
-
-    We travel to a civilization hot and old, with dog-headed gods and coffins of gold.
-
-
-    Head to the back, find the burial room.
-    Your destination will look like a tomb. 
-    `,
-    hint: "You’ll find what you are looking for in the Walton Hall of Ancient Egypt.",
-    foundit: "You found The Chantress of Amun Coffin! This was the very first piece added to the museum.  Check out the accession number!"
+    clue: `🔎1⃣: Can you find the oldest museum entrance, surrounded by pillars of green?`,
+    hint: "To find item 1⃣, walk beyond the Hall of Architecture to the room with green columns.",
+    foundit: "You found 1⃣! This beautiful foyer of Carnegie Music Hall was built in 1895. The Music Hall lies just around the corner to your left, and the original doors were located between the Foyer and the Hall. Check out this pic of the original building!"
 },
 {
     number: 2,
-    clue: `Your next stop will help you cool off! Say hello to the Polar Bear!`,
-    hint: "You’ll find what you are looking for in Polar World: The Wyckoff Hall of Arctic Life.",
-    foundit: "You found the Polar Bear! Polar bears sometimes cover their nose with their paw to help them hide in the white snow!"
+    clue: `🔎2⃣: Since we’re talking about history, here’s the next clue. Imagine the sound of a horse and carriage, rolling up to this side entrance off Forbes Avenue. You’ll find me there, by a wooden door between doors.`,
+    hint: "To find 2⃣, look in the entryway of the Carriage Drive entrance.",
+    foundit: "You found 2⃣! Great work! Through this door lies the Founder’s Room, which was the office of museum founder Andrew Carnegie."
 },
 
 {
     number: 3,
-    clue: `Just like Dad-jokes, the next spot is corny.
-
-
-    Don’t get too a-maized, but there are two spots where you can practice your corn grinding skills.
-    Shucks, you might have to stalk through the rows of the exhibit before the answer pops out at you.
-
-
-    Talk it over with your team. They’re all ears. 
-    `,
-    hint: "You’ll find what you are looking for in the Alcoa Foundation Hall of American Indians.",
-    foundit: "You found Corn Grinding with the Iroquois! Punderful work!"
+    clue: `🔎3⃣: Now it’s time to head to one of my favorite spots! Visit a set of stairs surrounded by murals, considered to be one of the most beautiful museum staircases in the world.`,
+    hint: "To find 3⃣, go to the multi-level Grand Staircase.",
+    foundit: "You found 3⃣! These murals were painted by John White Alexander, a Pittsburgh native. Alexander also worked on the very first Carnegie International exhibition in 1895."
 },
 
 {
     number: 4,
-    clue: `Look through the hall with the birds that soar,
-    While you’re there, don’t be gloomy and look at the floor,
-    See the Section of Mystery and open the door.            
-    `,
-    hint: "You’ll find what you are looking for in Bird Hall.",
-    foundit: "You found the Section of Mystery! I wonder what’s behind the other small door back there? But stay focused! Are you ready for the next clue?"
+    clue: `🔎4⃣: Shine bright like a diamond—or crystal! Look for me inside the Bruce Galleries by two dazzling decanters.`,
+    hint: "To find 4⃣, visit the Bruce Galleries located on the second floor, just off the Grand Staircase.",
+    foundit: "You found 4⃣! These sparkling decanters were made for President James Monroe, one of America’s founding fathers, in 1818. Quite different from our modern water bottles, right?"
 },
 
 {
     number: 5,
-    clue: `It’s finally time to see the dinosaurs.
-    Take a right at the end of Bird Hall and travel to prehistoric times at the 3rd Floor Jurassic Overlook.        
-    `,
-    hint: "Look for a scan code overlooking Dino Hall to get your next clue",
-    foundit: `you found it!  How many dino can you see from there?  Some are even up in the air!`
+    clue: `🔎5⃣: It’s a bird, it’s a plane, it’s…a metal couch? Look for me just around the corner and decide for yourself.`,
+    hint: "To find 5⃣, enter the gallery next to the wall of chairs.",
+    foundit: `You found 5⃣! Nice work! This sleek couch made history when it appeared in a Madonna music video in 1988. The Museum of Art was the first to recognize the Lockheed Lounge’s artistic value and add it to our collection.`
 },
 
 {
     number: 6,
-    clue: `He stays on the ground, but he doesn’t mind. Can you search for a badger and see what you find?        
-    `,
-    hint: "Head downstairs to the Hall of North American Wildlife all the way to the back corner!",
-    foundit: `You found the Badger! Scientists generally agree that there are 3 species of badger. They do not count the infamous honey badger, because it is genetically and genealogically distant from the others. Something tells me honey badger don’t care.`
+    clue: `🔎6⃣: The next item is young, but it’s also very, very old. Look for me by a coffin made of gold.`,
+    hint: "To find 6⃣, head to Walton Hall of Ancient Egypt.",
+    foundit: `You found 6⃣! Great work! This child mummy was the first item in the collection at the Museum of Natural History.`
 },
 
 {
     number: 7,
-    clue: `It’s time to take a break on the Savannah.
-    Look for a tree to take a nap under.
-    Nothing to fear, you’re perfectly safe…
-    `,
-    hint: "You’ll find what you are looking for in the Hall of African Wildlife.",
-    foundit: "You made it to the Acacia Tree, but did you spot a sneaky hunter?"
+    clue: `🔎7⃣: You’ll find me where the birds are singing, hanging out with an ancestor of our feathered friends.`,
+    hint: "To find 7⃣, scan the walls of Bird Hall for your answer.",
+    foundit: "You found 7⃣! Archaeopteryx, discovered in 1860, was once believed to be the earliest known bird. Today, it’s recognized as a significant transitional fossil between dinosaurs and birds."
 },
 
 {
     number: 8,
-    clue: `You’re almost to the end!  But it’s not time for a break.
-    Instead look for pelts—there is one that’s fake.
- 
-    If you can’t see the code, here’s how you cope,
-    Examine the pelt in Discovery Basecamp with a microscope.
-    `,
-    hint: "Look for the microscopes in Discovery Basecamp.",
-    foundit: "You found the microscopic code! That was tricky, nice sleuthing!"
+    clue: `🔎8⃣: It’s almost Thanksgiving, and the holiday meal wouldn’t be complete without this bird. Can you find it—and me?`,
+    hint: "To find 8⃣, walk down the hall from 7⃣",
+    foundit: "You found 8⃣! Good job! Ben Franklin wanted the turkey to be America’s national bird, but the bald eagle won instead. In fact, the #1 bird in our collection is a bald eagle rumored to have perished at the Battle of Gettysburg."
 },
 
 {
     number: 9, 
-    clue: `The hunt began with the first piece added to the collection, now look for the first dinosaur added by Andrew Carnegie.`,
-    hint: "You’ll find what you are looking for in the exhibit called Dinosaurs in Their Time.",
-    foundit: "You found the Diplodocus Carnegii! How many paces does it take to get from the tip of his nose to the tip of his tail?"
+    clue: `🔎9️⃣: Speaking of birds, I’d like to introduce you to a strange-looking dinosaur that looks like a huge chicken. Can you find it hiding in Dinosaurs in Their Time?`,
+    hint: "To find 9️⃣, look near the two T. rex. (Use the stairs or elevator located just beyond Population Impact to go downstairs).",
+    foundit: "You found 9⃣! This creature, Anzu wyleii, is the first one of its kind. In scientific terms, we call this a holotype. Carnegie paleontologist Matt Lamanna was part of the team that discovered Anzu."
 },
 
 {
     number: 10,
-    clue: `Lots of gems and minerals in the collection are locked under glass to protect them from us, but one mineral has another layer to protect us from it!`,
-    hint: "You’ll find what you are looking for in the Hillman Hall of Minerals and Gems",
-    foundit: "You found the Sulfur! Pure sulfur isn’t stinky- it produces odor when combined with hydrogen."
-},
-
-{
-    number: 11,
-    clue: `You might decide to add to your collection in our gift shop, or maybe you collected some great memories and pictures!
-    Look for another collection in the lobby.
-    `,
-    hint: "You’ll find what you are looking for at the bottom of the Grand Staircase.",
-    foundit: "You found the Butterflies! While you’re here, don’t forget to look at the fantastic staircase, one of the most beautiful museum staircases in the world."
+    clue: `🔎🔟: Can you locate the first dinosaur discovered by Carnegie paleontologists? You’ll find me there!`,
+    hint: "To find 🔟, look for the dinosaur with the longest tail.",
+    foundit: "You found 🔟! Diplodocus carnegii—affectionately known as Dippy--was unearthed in 1899. In fact, the Museum of Natural History was called “the House that Dippy Built."
 },
 ]
 

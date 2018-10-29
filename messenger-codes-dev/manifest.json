@@ -1,82 +1,42 @@
 {
-	"3448f1df": {
-		"uri": "https://scontent.xx.fbcdn.net/v/t39.8917-6/34435196_1695103970524859_8839699361307820032_n.png?_nc_cat=0&oh=44fd1559ebaea69ec976fe0a7b50e1e3&oe=5BBA7C42",
-		"ref": "scavengerhunt-0",
-		"description": "Clue 0 - Start"
+	"1c2233f3": {
+		"uri": "https://scontent.xx.fbcdn.net/v/t39.8917-6/43489098_1825136384201101_7804596063830016000_n.png?_nc_cat=106&_nc_ht=scontent.xx&oh=a5d59ae540d27df513fb6174d125d583&oe=5C4DBFD5",
+		"ref": "scav1"
 	},
-	"e8e49e6b": {
-		"uri": "https://scontent.xx.fbcdn.net/v/t39.8917-6/34391115_2009509172402370_7478340997882052608_n.png?_nc_cat=0&oh=cebc89efb9fa8be58d9abc1238ecd913&oe=5BC3D1C4",
-		"ref": "scavengerhunt-1",
-		"description": "Clue 1"
+	"eeff3d29": {
+		"uri": "https://scontent.xx.fbcdn.net/v/t39.8917-6/41701975_2478659995485293_8309824706219868160_n.png?_nc_cat=108&_nc_ht=scontent.xx&oh=b8cee8a672ad52377ba5a88d75b3042c&oe=5C488916",
+		"ref": "scav2"
 	},
-	"f13b1c73": {
-		"uri": "https://scontent.xx.fbcdn.net/v/t39.8917-6/34419060_1917328751630996_297144842767564800_n.png?_nc_cat=0&oh=b817fc63977955870b925489dfb15281&oe=5B7A267F",
-		"ref": "scavengerhunt-2",
-		"description": "Clue 2"
+	"9a74011a": {
+		"uri": "https://scontent.xx.fbcdn.net/v/t39.8917-6/44731323_2087580391301728_4337263786038657024_n.png?_nc_cat=105&_nc_ht=scontent.xx&oh=25960274eb410ed74094e093161a351b&oe=5C523ED3",
+		"ref": "scav3"
 	},
-	"b2ad5406": {
-		"uri": "https://scontent.xx.fbcdn.net/v/t39.8917-6/34437460_1838082582919690_4624696651188011008_n.png?_nc_cat=0&oh=3c4c9b7f935d33db8678f8c5809fddae&oe=5BBAB2F3",
-		"ref": "scavengerhunt-3",
-		"description": "Clue 3"
+	"2068f367": {
+		"uri": "https://scontent.xx.fbcdn.net/v/t39.8917-6/44817314_1910991955653894_8961393531608367104_n.png?_nc_cat=111&_nc_ht=scontent.xx&oh=ee521809bcd0e6582afe84b61d3a8d1d&oe=5C3EB141",
+		"ref": "scav4"
 	},
-	"cf862f1a": {
-		"uri": "https://scontent.xx.fbcdn.net/v/t39.8917-6/34429833_2164343066915131_1812263361807646720_n.png?_nc_cat=0&oh=9d6d5a518bbf474c95022bf824fd33f9&oe=5BB58FE2",
-		"ref": "scavengerhunt-4",
-		"description": "Clue 4"
+	"474548b7": {
+		"uri": "https://scontent.xx.fbcdn.net/v/t39.8917-6/44794315_2125763934134426_6446010578535186432_n.png?_nc_cat=102&_nc_ht=scontent.xx&oh=3d8ea667cdc4f4b9351626a047a2fc53&oe=5C849AA9",
+		"ref": "scav5"
 	},
-	"e503b97c": {
-		"uri": "https://scontent.xx.fbcdn.net/v/t39.8917-6/34411963_2189379994469143_8046316750234451968_n.png?_nc_cat=0&oh=bf46b173b825eb1c894af27661a725cb&oe=5B881988",
-		"ref": "scavengerhunt-5",
-		"description": "Clue 5"
+	"cc0f4643": {
+		"uri": "https://scontent.xx.fbcdn.net/v/t39.8917-6/43590483_1891000884340574_7779925346480029696_n.png?_nc_cat=105&_nc_ht=scontent.xx&oh=36e15371d969096ebe37159639b374d6&oe=5C4538E5",
+		"ref": "scav6"
 	},
-	"9485f3e0": {
-		"uri": "https://scontent.xx.fbcdn.net/v/t39.8917-6/34408413_1960624410615143_4962074041755107328_n.png?_nc_cat=0&oh=8725747732a2efca6eb461998caddaa8&oe=5BC3393B",
-		"ref": "scavengerhunt-6",
-		"description": "Clue 6"
+	"fbbdd116": {
+		"uri": "https://scontent.xx.fbcdn.net/v/t39.8917-6/44677364_2045405992183006_5036000900049534976_n.png?_nc_cat=110&_nc_ht=scontent.xx&oh=c1c54e58bddae36c7c39fab0f0b9c3f7&oe=5C4325EF",
+		"ref": "scav7"
 	},
-	"526e8ae5": {
-		"uri": "https://scontent.xx.fbcdn.net/v/t39.8917-6/34430309_1681885148574181_4529253827806756864_n.png?_nc_cat=0&oh=61343581ed59360e97908cfb7855dd6e&oe=5B85C23D",
-		"ref": "scavengerhunt-7",
-		"description": "Clue 7"
+	"6ed169d4": {
+		"uri": "https://scontent.xx.fbcdn.net/v/t39.8917-6/44746153_1811341978918973_9092265849451970560_n.png?_nc_cat=109&_nc_ht=scontent.xx&oh=5a2aaf769e79dd25ef1763c8495071fb&oe=5C3CEB09",
+		"ref": "scav8"
 	},
-	"29cbe6a1": {
-		"uri": "https://scontent.xx.fbcdn.net/v/t39.8917-6/34435131_1962262120512165_7191169352643641344_n.png?_nc_cat=0&oh=b2452405298bd10c8a9de65c16f8cb11&oe=5BC24D3D",
-		"ref": "scavengerhunt-8",
-		"description": "Clue 8"
+	"c4854e8c": {
+		"uri": "https://scontent.xx.fbcdn.net/v/t39.8917-6/44701128_1977646588982947_4776293938581471232_n.png?_nc_cat=107&_nc_ht=scontent.xx&oh=d5d9179458c64289424652c123a33d64&oe=5C53002D",
+		"ref": "scav9"
 	},
-	"851d415f": {
-		"uri": "https://scontent.xx.fbcdn.net/v/t39.8917-6/34430823_1989753194430745_2425844215075307520_n.png?_nc_cat=0&oh=eb00a4b051776608395ffc902413af73&oe=5BBE443A",
-		"ref": "scavengerhunt-9",
-		"description": "Clue 9"
-	},
-	"bbb19032": {
-		"uri": "https://scontent.xx.fbcdn.net/v/t39.8917-6/34421147_1802027129856108_8213127975726481408_n.png?_nc_cat=0&oh=a957dbd73e6e670ac6a4ae63f0c5b07c&oe=5B7859FC",
-		"ref": "scavengerhunt-10",
-		"description": "Clue 10"
-	},
-	"7f6ce0ba": {
-		"uri": "https://scontent.xx.fbcdn.net/v/t39.8917-6/34431177_2085577568137400_7368669209842155520_n.png?_nc_cat=0&oh=69d8b87b34adad3cfe9d153fc1c9584a&oe=5BBE13E1",
-		"ref": "scavengerhunt-11",
-		"description": "Clue 11"
-	},
-	"3deb4309": {
-		"uri": "https://scontent.xx.fbcdn.net/v/t39.8917-6/34573177_2140466672654472_5494327898271645696_n.png?_nc_cat=0&oh=1edeac4a94cfe7745cd52c1274bb9cbf&oe=5B837A29",
-		"ref": "scavengerhunt-12",
-		"description": "Clue 12"
-	},
-	"94382d5a": {
-		"uri": "https://scontent.xx.fbcdn.net/v/t39.8917-6/34430639_2250701188281172_6163026994561810432_n.png?_nc_cat=0&oh=0dd8379d2238e902f2c324823296c076&oe=5BBFCCDD",
-		"ref": "activities-lunchtime",
-		"description": "Lunchtime scan code"
-	},
-	"860f00a0": {
-		"uri": "https://scontent.xx.fbcdn.net/v/t39.8917-6/34618905_1713221295428885_2056516343749935104_n.png?_nc_cat=0&oh=7447ab61f0a82013ab3faec239e5dc73&oe=5B7DD605",
-		"ref": "stamp-checkin-oakland",
-		"description": "Oakland Checkin"
-	},
-	"172fea72": {
-		"uri": "https://scontent.xx.fbcdn.net/v/t39.8917-6/34442673_2021569484542132_8199125201225515008_n.png?_nc_cat=0&oh=9d73863ab80ddd861fe4973d33eec0db&oe=5BBDD9AE",
-		"ref": "parking-cmnh",
-		"description": "Oakland Parking"
+	"fd51c775": {
+		"uri": "https://scontent.xx.fbcdn.net/v/t39.8917-6/44779600_1901931803229542_3146440835722117120_n.png?_nc_cat=103&_nc_ht=scontent.xx&oh=af91829e409a24d6050601ae1c3ada7a&oe=5C3F6CAF",
+		"ref": "scav10"
 	}
 }
