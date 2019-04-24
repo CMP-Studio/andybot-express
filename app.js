@@ -8,10 +8,8 @@ const morgan = require('morgan')
 
 const User = require("./andybot/User");
 const Scan = require("./andybot/Scan");
-const Poll = require("./andybot/Poll");
 const Schedule = require("./andybot/Schedule");
 const Trivia = require("./andybot/Trivia");
-const Achievement = require("./andybot/Achievement");
 const ScavengerHunt = require("./andybot/ScavengerHunt");
 
 app.use(cors())
