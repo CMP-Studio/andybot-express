@@ -132,8 +132,8 @@ const scavengerhunt = [
 },
 {
     number: 2,
-    clue: `🔎2⃣: Since we’re talking about history, here’s the next clue. Imagine the sound of a horse and carriage, rolling up to this side entrance off Forbes Avenue. You’ll find me in the entryway, by a wooden door marked with gold.`,
-    hint: "To find 2⃣, go to the Carriage Drive entrance and find the door labeled Founder’s Room.",
+    clue: `🔎2⃣: Since we’re talking about history, here’s the next clue. Imagine the sound of a horse and carriage, rolling up to this side entrance off Forbes Avenue. You’ll find me there, by a wooden door between doors.`,
+    hint: "To find 2⃣, look in the entryway of the Carriage Drive entrance.",
     foundit: "You found 2⃣! Great work! Through this door lies the Founder’s Room, which was the office of museum founder Andrew Carnegie.",
     pic: "6B63231B9FC5B87BC115E7503796.jpg"
 },
@@ -147,7 +147,7 @@ const scavengerhunt = [
 
 {
     number: 4,
-    clue: `🔎4⃣: Shine bright like a diamond—or crystal! Look for me by two dazzling decanters in the Bruce Galleries for decorative arts and design.`,
+    clue: `🔎4⃣: Shine bright like a diamond—or crystal! Look for me inside the Bruce Galleries by two dazzling decanters.`,
     hint: "To find 4⃣, visit the Bruce Galleries located on the second floor, just off the Grand Staircase.",
     foundit: "You found 4⃣! These sparkling decanters were made for President James Monroe, one of America’s founding fathers, in 1818. Quite different from our modern water bottles, right?"
 },
