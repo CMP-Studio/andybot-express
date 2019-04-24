@@ -52,15 +52,12 @@ module.exports = {
             // If they found an object, determine which found
             if (scan >= 1 && scan <= 10) {
                 huntResponse.foundIt = scavengerhunt[scan - 1].foundit;
-                if (scavengerhunt[scan - 1].pic !== undefined) {
-                    huntResponse.pic = scavengerhunt[scan - 1].pic;
-                }
             }
 
             // Determine which clue to send them next       
             if (objectsRemaining.length > 0) {
                 let nextObject = -1;
-                let numObjects = 10 + 1; // Add 1 for the modulo operation
+                let numObjects = 10;
                 for(var i = 0; i < numObjects; ++i){
                     tryNextObject = (scan + i) % numObjects
                     if(objectsRemaining.includes(tryNextObject)){
@@ -127,15 +124,13 @@ const scavengerhunt = [
     number: 1,
     clue: `🔎1⃣: Can you find the oldest museum entrance, surrounded by pillars of green?`,
     hint: "To find item 1⃣, walk beyond the Hall of Architecture to the room with green columns.",
-    foundit: "You found 1⃣! This beautiful foyer of Carnegie Music Hall was built in 1895. The Music Hall lies just around the corner to your left, and the original doors were located between the Foyer and the Hall. Check out this pic of the original building!",
-    pic: "early_museum_oakland.jpg"
+    foundit: "You found 1⃣! This beautiful foyer of Carnegie Music Hall was built in 1895. The Music Hall lies just around the corner to your left, and the original doors were located between the Foyer and the Hall. Check out this pic of the original building!"
 },
 {
     number: 2,
     clue: `🔎2⃣: Since we’re talking about history, here’s the next clue. Imagine the sound of a horse and carriage, rolling up to this side entrance off Forbes Avenue. You’ll find me there, by a wooden door between doors.`,
     hint: "To find 2⃣, look in the entryway of the Carriage Drive entrance.",
-    foundit: "You found 2⃣! Great work! Through this door lies the Founder’s Room, which was the office of museum founder Andrew Carnegie.",
-    pic: "6B63231B9FC5B87BC115E7503796.jpg"
+    foundit: "You found 2⃣! Great work! Through this door lies the Founder’s Room, which was the office of museum founder Andrew Carnegie."
 },
 
 {
@@ -191,8 +186,7 @@ const scavengerhunt = [
     number: 10,
     clue: `🔎🔟: Can you locate the first dinosaur discovered by Carnegie paleontologists? You’ll find me there!`,
     hint: "To find 🔟, look for the dinosaur with the longest tail.",
-    foundit: "You found 🔟! Diplodocus carnegii—affectionately known as Dippy—was unearthed in 1899. In fact, the Museum of Natural History was called “the House that Dippy Built.",
-    pic: "olddippy.jpg"
+    foundit: "You found 🔟! Diplodocus carnegii—affectionately known as Dippy--was unearthed in 1899. In fact, the Museum of Natural History was called “the House that Dippy Built."
 },
 ]
 
