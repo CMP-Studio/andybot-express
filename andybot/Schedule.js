@@ -22,6 +22,7 @@ async function getCalendarEvents() {
 
     try {
         // Fetch events from google calendar
+        // https://developers.google.com/calendar/v3/reference/events/list
         const calendar = await google.calendar({version: "v3"}).events.list({
             auth: config.google.apiKey,
             calendarId: config.scheduleCalendarId,
@@ -29,6 +30,7 @@ async function getCalendarEvents() {
             singleEvents: true,
             orderBy: "startTime",
             timeMin: timeMin,
+            maxResults: 2000,
         });
         return calendar.data.items;
     } catch (err) {
