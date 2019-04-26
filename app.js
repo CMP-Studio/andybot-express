@@ -161,6 +161,19 @@ app.post("/achievement/progress", async (req, res) => {
 })
 
 
+app.post("/scavengerhunt/getClue", async (req, res) => {
+    try {
+        const clue = await ScavengerHunt.getClue(req.body.fb_page_id);
+        res.json(clue);
+    } catch (err){
+        console.error(err);
+        res.json({
+            error: err.message
+        });
+    }
+})
+
+
 app.post("/scavengerhunt/getHint", async (req, res) => {
     try {
         const hint = await ScavengerHunt.getHint(req.body.clue_number);

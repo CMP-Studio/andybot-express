@@ -30,9 +30,6 @@ module.exports = {
         let huntResponse = {};
 
         let objectScanned = parseInt(clueFound);
-         console.log("clueFound");
-         console.log(clueFound)
-         console.log(clueNumbers);
 
         try {
             objectsFound = await db(tableName).select("*").where({ fb_page_id: pageId });
@@ -62,8 +59,6 @@ module.exports = {
 
             // Create a list of remaining objects (not including a frame which doesn't need to be found to win)
             objectsRemaining = _.filter(clueNumbers, (objectNum) => { return !objectsFound.includes(objectNum) });
-            console.log(objectsRemaining);
-            console.log(objectsFound);
 
             // Determine if they just finished the hunt
             if (objectsRemaining.length === 0) {
@@ -94,7 +89,52 @@ module.exports = {
             return { error: err.message };
         }
 
-        console.log(huntResponse);
+        return huntResponse;
+    },
+
+    getClue: async (pageId) => {
+        let clueNumbers = Array.from({length: scavengerhunt.length}, (v, k) => k+1);
+        let objectsFound;
+        let objectsRemaining;
+        let nextClueNumber;
+
+        let huntResponse = {};
+
+        try {
+            objectsFound = await db(tableName).select("*").where({ fb_page_id: pageId });
+            objectsFound = _.map(objectsFound, (p) => parseInt(p.clue_number) );
+
+            // Determine if they just started the hunt
+            if (objectsFound.length === 0) {
+                huntResponse.begin = true;
+            } 
+            // or have already completed it
+            if (objectsFound.length >= scavengerhunt.length) {
+                huntResponse.completed = true;
+            }
+
+            // Create a list of remaining objects
+            objectsRemaining = _.filter(clueNumbers, (objectNum) => { return !objectsFound.includes(objectNum) });
+
+            // Determine which clue to send them next       
+            if (objectsRemaining.length > 0) {
+                let nextObject = -1;
+                let numObjects = scavengerhunt.length;
+                for(var i = 0; i <= numObjects*2; ++i){
+                    tryNextObject = i % (numObjects + 1)
+                    if (objectsRemaining.includes(tryNextObject)){
+                        huntResponse.nextClue = scavengerhunt[tryNextObject-1].clue;
+                        huntResponse.nextClueNumber = tryNextObject;
+                        break;
+                    }
+                }
+            }
+                
+        } catch (err) {
+            console.log("There was an err", err);
+            return { error: err.message };
+        }
+
         return huntResponse;
     },
 

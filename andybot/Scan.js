@@ -67,7 +67,7 @@ module.exports = {
                 }
             }
 
-            return { code: scannedCode, scan, type: "unknown" };
+            return { code, type: code };
 
         }
         return null;
