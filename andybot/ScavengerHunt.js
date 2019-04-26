@@ -2,6 +2,7 @@
 const tableName = 'scavengerhunt';
 const db = require("../db");
 const _ = require("lodash");
+const scavengerhunt = require("./activities.json")["scavengerhunt"];
 
 module.exports = {
     numCluesFound: async (pageId) => {
@@ -19,8 +20,8 @@ module.exports = {
         }
     },
 
-    clueFound: async (pageId, scan) => {
-        let clueNumbers = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11]; // length = 12
+    clueFound: async (pageId, clueFound) => {
+        let clueNumbers = Array.from({length: scavengerhunt.length}, (v, k) => k+1);
         let objectsFound;
         let prevObjectsRemaining;
         let objectsRemaining;
@@ -28,7 +29,10 @@ module.exports = {
 
         let huntResponse = {};
 
-        let objectScanned = parseInt(scan.trigger);
+        let objectScanned = parseInt(clueFound);
+         console.log("clueFound");
+         console.log(clueFound)
+         console.log(clueNumbers);
 
         try {
             objectsFound = await db(tableName).select("*").where({ fb_page_id: pageId });
@@ -37,12 +41,13 @@ module.exports = {
             // Determine if they just started the hunt
             if (objectsFound.length === 0) {
                 huntResponse.firstScan = true;
+            } 
+            // or have already completed it
+            if (objectsFound.length >= scavengerhunt.length) {
+                huntResponse.completed = true;
             }
 
-            // Create a list of remaining objects before this clue (not including a frame which doesn't need to be found to win)
-            prevObjectsRemaining = _.filter(clueNumbers, (objectNum) => { return objectNum !== 0 && !objectsFound.includes(objectNum); });
-
-            // If you scanned a code for the first time, record it in the database (even the a frame)
+            // If you scanned a code for the first time, record it in the database
             if (objectsFound.indexOf(objectScanned) === -1) {
                 const recordSaved = await db(tableName).insert({
                     fb_page_id: pageId,
@@ -56,35 +61,31 @@ module.exports = {
             }
 
             // Create a list of remaining objects (not including a frame which doesn't need to be found to win)
-            objectsRemaining = _.filter(clueNumbers, (objectNum) => { return objectNum !== 0 && !objectsFound.includes(objectNum) });
+            objectsRemaining = _.filter(clueNumbers, (objectNum) => { return !objectsFound.includes(objectNum) });
+            console.log(objectsRemaining);
+            console.log(objectsFound);
 
             // Determine if they just finished the hunt
-            if (objectsRemaining.length === 0 && prevObjectsRemaining.length !== 0) {
+            if (objectsRemaining.length === 0) {
                 huntResponse.lastScan = true;
-            } else if (objectsRemaining.length === 0 && prevObjectsRemaining.length === 0) {
-                huntResponse.huntComplete = true;
             }
 
             // If they found an object, determine which found
-            if (objectScanned >= 1 && objectScanned <= 11) {
-                huntResponse.foundIt = scavengerhunt[objectScanned - 1].foundit;
+            if (objectScanned >= 1 && objectScanned <= scavengerhunt.length) {
+                huntResponse.foundIt = scavengerhunt[objectScanned - 1].answer;
             }
 
             // Determine which clue to send them next       
             if (objectsRemaining.length > 0) {
                 let nextObject = -1;
-                let numObjects = 12;
-                for(var i = 0; i < numObjects; ++i){
-                    tryNextObject = (objectScanned + i) % numObjects
-                    if(objectsRemaining.includes(tryNextObject)){
-                        nextObject = tryNextObject;
+                let numObjects = scavengerhunt.length;
+                for(var i = objectScanned; i <= numObjects*2; ++i){
+                    tryNextObject = i % (numObjects + 1)
+                    if (objectsRemaining.includes(tryNextObject)){
+                        huntResponse.nextClue = scavengerhunt[tryNextObject-1].clue;
+                        huntResponse.nextClueNumber = tryNextObject;
                         break;
                     }
-                }
-                if (nextObject != -1) {
-                    let nextClue = nextObject - 1;
-                    huntResponse.nextClue = scavengerhunt[nextClue].clue;
-                    huntResponse.nextClueNumber = nextClue;
                 }
             }
                 
@@ -99,120 +100,9 @@ module.exports = {
 
     getHint: async (clueNumber) => {
         if (clueNumber <= scavengerhunt.length) {
-            return { hint: scavengerhunt[clueNumber].hint };
+            return { hint: scavengerhunt[clueNumber-1].hint };
         }
     },
 }
-
-const scavengerhunt = [
-{
-    number: 1,
-    clue: `This hunt starts at the top,
-    And works its way down, look for the oldest objects around.
-
-
-    We travel to a civilization hot and old, with dog-headed gods and coffins of gold.
-
-
-    Head to the back, find the burial room.
-    Your destination will look like a tomb. 
-    `,
-    hint: "You’ll find what you are looking for in the Walton Hall of Ancient Egypt.",
-    foundit: "You found The Chantress of Amun Coffin! This was the very first piece added to the museum.  Check out the accession number!"
-},
-{
-    number: 2,
-    clue: `Your next stop will help you cool off! Say hello to the Polar Bear!`,
-    hint: "You’ll find what you are looking for in Polar World: The Wyckoff Hall of Arctic Life.",
-    foundit: "You found the Polar Bear! Polar bears sometimes cover their nose with their paw to help them hide in the white snow!"
-},
-
-{
-    number: 3,
-    clue: `Just like Dad-jokes, the next spot is corny.
-
-
-    Don’t get too a-maized, but there are two spots where you can practice your corn grinding skills.
-    Shucks, you might have to stalk through the rows of the exhibit before the answer pops out at you.
-
-
-    Talk it over with your team. They’re all ears. 
-    `,
-    hint: "You’ll find what you are looking for in the Alcoa Foundation Hall of American Indians.",
-    foundit: "You found Corn Grinding with the Iroquois! Punderful work!"
-},
-
-{
-    number: 4,
-    clue: `Look through the hall with the birds that soar,
-    While you’re there, don’t be gloomy and look at the floor,
-    See the Section of Mystery and open the door.            
-    `,
-    hint: "You’ll find what you are looking for in Bird Hall.",
-    foundit: "You found the Section of Mystery! I wonder what’s behind the other small door back there? But stay focused! Are you ready for the next clue?"
-},
-
-{
-    number: 5,
-    clue: `It’s finally time to see the dinosaurs.
-    Take a right at the end of Bird Hall and travel to prehistoric times at the 3rd Floor Jurassic Overlook.        
-    `,
-    hint: "Look for a scan code overlooking Dino Hall to get your next clue",
-    foundit: `you found it!  How many dino can you see from there?  Some are even up in the air!`
-},
-
-{
-    number: 6,
-    clue: `He stays on the ground, but he doesn’t mind. Can you search for a badger and see what you find?        
-    `,
-    hint: "Head downstairs to the Hall of North American Wildlife all the way to the back corner!",
-    foundit: `You found the Badger! Scientists generally agree that there are 3 species of badger. They do not count the infamous honey badger, because it is genetically and genealogically distant from the others. Something tells me honey badger don’t care.`
-},
-
-{
-    number: 7,
-    clue: `It’s time to take a break on the Savannah.
-    Look for a tree to take a nap under.
-    Nothing to fear, you’re perfectly safe…
-    `,
-    hint: "You’ll find what you are looking for in the Hall of African Wildlife.",
-    foundit: "You made it to the Acacia Tree, but did you spot a sneaky hunter?"
-},
-
-{
-    number: 8,
-    clue: `You’re almost to the end!  But it’s not time for a break.
-    Instead look for pelts—there is one that’s fake.
- 
-    If you can’t see the code, here’s how you cope,
-    Examine the pelt in Discovery Basecamp with a microscope.
-    `,
-    hint: "Look for the microscopes in Discovery Basecamp.",
-    foundit: "You found the microscopic code! That was tricky, nice sleuthing!"
-},
-
-{
-    number: 9, 
-    clue: `The hunt began with the first piece added to the collection, now look for the first dinosaur added by Andrew Carnegie.`,
-    hint: "You’ll find what you are looking for in the exhibit called Dinosaurs in Their Time.",
-    foundit: "You found the Diplodocus Carnegii! How many paces does it take to get from the tip of his nose to the tip of his tail?"
-},
-
-{
-    number: 10,
-    clue: `Lots of gems and minerals in the collection are locked under glass to protect them from us, but one mineral has another layer to protect us from it!`,
-    hint: "You’ll find what you are looking for in the Hillman Hall of Minerals and Gems",
-    foundit: "You found the Sulfur! Pure sulfur isn’t stinky- it produces odor when combined with hydrogen."
-},
-
-{
-    number: 11,
-    clue: `You might decide to add to your collection in our gift shop, or maybe you collected some great memories and pictures!
-    Look for another collection in the lobby.
-    `,
-    hint: "You’ll find what you are looking for at the bottom of the Grand Staircase.",
-    foundit: "You found the Butterflies! While you’re here, don’t forget to look at the fantastic staircase, one of the most beautiful museum staircases in the world."
-},
-]
 
 const numClues = scavengerhunt.length;

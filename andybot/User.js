@@ -74,15 +74,15 @@ module.exports = {
             const currTimestamp = (new Date()).getTime();
             const checkinTime = user.state.last_scan_timestamp;
             if (currTimestamp - checkinTime <= threeHoursMs) {
-                locationActivities = _.filter(activities.manifest, (a) => {
+                locationActivities = _.filter(activities.activities, (a) => {
                     return a.location === user.state.location;
                 });
             }
         }
 
         result = utils.isNonNull(locationActivities) ? 
-            _.uniq([ ...locationActivities, ...activities.manifest ]): 
-            _.map(activities.manifest, ({ activity, image, title, subtitle, museum }) => ({
+            _.uniq([ ...locationActivities, ...activities.activities ]): 
+            _.map(activities.activities, ({ activity, image, title, subtitle, museum }) => ({
                 activity, image, title, subtitle, museum, type: title.split('|')[0],
         }));
 

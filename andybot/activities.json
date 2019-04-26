@@ -18,12 +18,12 @@
         {
             "image": "howtoplay-4.png",
             "title": "4. Scan Codes",
-            "subtitle": "1. Open MESSENGER app   2. Go to PEOPLE tab   3. Tap SCAN CODE"
+            "subtitle": "Use your phone's QR code reader to scan a code. Follow the link to chat!"
         },
         {
             "image": "howtoplay-5.png",
             "title": "5. Track Progress",
-            "subtitle": "Tap on MY ADVENTURE to view your stamps, and learn how to unlock more!"
+            "subtitle": "Tap on MY STAMPS to view your stamps, and learn how to unlock more!"
         },
         {
             "image": "howtoplay-7.png",
@@ -31,11 +31,11 @@
             "subtitle": "CMP members can enter their stamps into the grand-prize drawing on August 29."
         }
     ],
-    "manifest": [
+    "activities": [
         {
-            "activity": "scavengerhunt-oakland",
+            "activity": "scavengerhunt",
             "image": "scavengerhunt-oakland-carousel.png",
-            "title": "Scavenger Hunt | Oakland",
+            "title": "Scavenger Hunt",
             "subtitle": "Solve exciting clues and discover museum treasures!",
             "location": "CMNH"
         },
@@ -210,7 +210,7 @@
             "when": "July 19, 6–10pm"
         },
         {
-            "id": "event-supscisat-jurassic",
+            "id": "event-sciencesaturday-jurassic",
             "stamp_id": "stamp-event-sciencesaturdays",
             "event": "Super Science Saturday: Jurassic Day",
             "image": "event-carousel-sciencesaturday.png",
@@ -220,7 +220,7 @@
             "when": "June 22, 12–4pm"
         },
         {
-            "id": "event-supscisat-scientist",
+            "id": "event-sciencesaturday-scientist",
             "stamp_id": "stamp-event-sciencesaturdays",
             "event": "Super Science Saturday: Scientist Takeover",
             "image": "event-carousel-sciencesaturday.png",
@@ -230,7 +230,7 @@
             "when": "July 27, 12–4pm"
         },
         {
-            "id": "event-supscisat-pet",
+            "id": "event-sciencesaturday-pet",
             "stamp_id": "stamp-event-sciencesaturdays",
             "event": "Super Science Saturday: Pet Palooza",
             "image": "event-carousel-sciencesaturday.png",
@@ -299,99 +299,56 @@
             "stamp_id": "stamp-checkin-oakland",
             "name": "Check-in at Oakland ",
             "events": [],
-            "messenger_code": "stamp-checkin-oakland",
-            "image": "stamp-checkin-oakland.png",
-            "splash_image": "andy-stamp-checkinoakland.png",
             "multiple": "true "
         },
         {
             "stamp_id": "stamp-checkin-csc",
             "name": "Check-in at the Science Center",
             "events": [],
-            "messenger_code": "stamp-checkin-csc",
-            "image": "stamp-checkin-csc.png",
-            "splash_image": "andy-stamp-checkincsc.png",
             "multiple": "true "
         },
         {
             "stamp_id": "stamp-checkin-warhol",
             "name": "Check-in at the Warhol",
             "events": [],
-            "messenger_code": "stamp-checkin-warhol",
-            "image": "stamp-checkin-warhol.png",
-            "splash_image": "andy-stamp-checkinwarhol.png",
             "multiple": "true "
         },
         {
             "stamp_id": "stamp-checkin-powdermill",
             "name": "Check-in at Powdermill ",
             "events": [],
-            "messenger_code": "stamp-checkin-powdermill",
-            "image": "stamp-checkin-powdermill.png",
-            "splash_image": "andy-stamp-checkin-powdermill.png",
             "multiple": "true "
         },
         {
-            "stamp_id": "stamp-wentdigital",
-            "name": "Went Digital",
-            "events": [],
-            "image": "stamp-wentdigital.png",
-            "splash_image": "andy-stamp-wentdigital.png",
+            "stamp_id": "stamp-event-summerkickoff",
+            "name": "Summer Kick-Off Celebration",
+            "events": [
+                "event-summerkickoff"
+            ],
             "multiple": "false "
         },
         {
-            "stamp_id": "stamp-event-grandopening",
-            "name": "PPG Grand Opening and Art of The Brick",
+            "stamp_id": "stamp-event-artofsight",
+            "name": "The Art of Sight ",
             "events": [
-                "event-grandopening"
+                "event-artofsight"
             ],
-            "messenger_code": "stamp-event-grandopening",
-            "image": "stamp-event-grandopening.png",
-            "splash_image": "andy-stamp-ppg.png",
             "multiple": "false "
         },
         {
-            "stamp_id": "stamp-event-starfestival",
-            "name": "Star Festival",
+            "stamp_id": "stamp-event-factory",
+            "name": "The Factory",
             "events": [
-                "event-starfestival"
+                "event-factory"
             ],
-            "messenger_code": "stamp-event-starfestival",
-            "image": "stamp-event-starfestival.png",
-            "splash_image": "andy-stamp-starfestival.png",
-            "multiple": "false "
+            "multiple": "true "
         },
         {
-            "stamp_id": "stamp-event-fashion",
-            "name": "Evening of Fashion",
+            "stamp_id": "stamp-event-spaceout",
+            "name": "Space Out!",
             "events": [
-                "event-fashion"
+                "event-spaceout"
             ],
-            "messenger_code": "stamp-event-fashion",
-            "image": "stamp-event-fashion.png",
-            "splash_image": "andy-stamp-fashion.png",
-            "multiple": "false "
-        },
-        {
-            "stamp_id": "stamp-event-icecream",
-            "name": "Ice Cream Social",
-            "events": [
-                "event-icecream"
-            ],
-            "messenger_code": "stamp-event-icecream",
-            "image": "stamp-event-icecream.png",
-            "splash_image": "andy-stamp-icecream.png",
-            "multiple": "false "
-        },
-        {
-            "stamp_id": "stamp-event-birthday",
-            "name": "Andy’s Birthday",
-            "events": [
-                "event-birthday"
-            ],
-            "messenger_code": "stamp-event-birthday",
-            "image": "stamp-event-birthday.png",
-            "splash_image": "andy-stamp-birthday.png",
             "multiple": "false "
         },
         {
@@ -400,54 +357,45 @@
             "events": [
                 "event-pollinatorfestival"
             ],
-            "messenger_code": "stamp-event-pollinatorfestival",
-            "image": "stamp-event-pollinatorfestival.png",
-            "splash_image": "andy-stamp-pollinatorfestival.png",
+            "multiple": "false "
+        },
+        {
+            "stamp_id": "stamp-event-lozzi",
+            "name": "Lozzi–palooza",
+            "events": [
+                "event-lozzi"
+            ],
             "multiple": "false "
         },
         {
             "stamp_id": "stamp-event-membertours",
-            "name": "Member Tours",
+            "name": "Member Tour",
             "events": [
-                "event-cmnhmembertour-gemsminerals",
-                "event-cmoamembertour-secretlanguage",
-                "event-warholmembertour-adman",
-                "event-cmoamembertour-publicart",
-                "event-cmnhmembertour-safari",
-                "event-cmnhmembertour-egypt",
-                "event-cmoamembertour-contemporary"
+                "event-membertour-monet",
+                "event-membertour-ruth",
+                "event-membertour-summer",
+                "event-membertour-kim"
             ],
-            "messenger_code": "stamp-event-membertours",
-            "image": "stamp-event-membertours.png",
-            "splash_image": "andy-stamp-membertours.png",
             "multiple": "true "
         },
         {
             "stamp_id": "stamp-event-sciencesaturdays",
-            "name": "Super Science Saturdays",
+            "name": "Super Science Saturday",
             "events": [
                 "event-sciencesaturday-jurassic",
                 "event-sciencesaturday-scientist",
-                "event-sciencesaturday-meowfest"
+                "event-sciencesaturday-pet"
             ],
-            "messenger_code": "stamp-event-sciencesaturdays",
-            "image": "stamp-event-sciencesaturdays.png",
-            "splash_image": "andy-stamp-sciencesaturdays.png",
             "multiple": "true "
         },
         {
             "stamp_id": "stamp-event-adults",
             "name": "Evenings For Adults",
             "events": [
-                "event-thirdthursday-girlfx",
-                "event-thirdthursday-contemporary",
-                "event-thirdthursday-intimate",
-                "event-afterdark-harrypotter",
+                "event-thirdthursday-wilkinsburg",
+                "event-afterdark-potterfest",
                 "event-goodfridays"
             ],
-            "messenger_code": "stamp-event-adults",
-            "image": "stamp-event-adults.png",
-            "splash_image": "andy-stamp-adults.png",
             "multiple": "true "
         },
         {
@@ -456,10 +404,69 @@
             "events": [
                 "event-trivianight"
             ],
-            "messenger_code": "stamp-event-trivianight",
-            "image": "stamp-event-trivianight.png",
-            "splash_image": "andy-stamp-trivianight.png",
             "multiple": "false "
+        }
+    ],
+    "scavengerhunt": [
+        {
+            "location": "Dippy - Diplodocus carnegii",
+            "clue": "Can you locate the first dinosaur discovered by Carnegie paleontologists? You’ll find me there!",
+            "hint": "Look for the dinosaur with the longest tail.",
+            "answer": "Diplodocus carnegii—affectionately known as Dippy—was unearthed in 1899. In fact, the Museum of Natural History was called “the House that Dippy Built.”"
+        },
+        {
+            "location": "Anzu wyleii - DITT, in the corner near T. rex",
+            "clue": "Now that you’ve met Dippy, I’d like to introduce you to a strange-looking dinosaur that looks like a huge chicken. Can you find it—and me!—hiding in the shadows near the battling T. rex?",
+            "hint": "Look in the corner beyond the triceratops.",
+            "answer": "You found it! This creature, Anzu wyleii, is the first one of its kind. In scientific terms, we call this a holotype. Carnegie paleontologist Matt Lamanna was part of the team that discovered Anzu."
+        },
+        {
+            "location": "Pterosaurs - Foster Overlook, outside North American Wildlife",
+            "clue": "I’d like to show you another creature that flies high in the sky in a group. You’ll find me hiding with them!",
+            "hint": "You have to look up! Use the winding stairs or silver elevator located in Dinosaurs in Their Time to go upstairs one level to find me soaring above Diplodocus.",
+            "answer": "Great job! These are pterosaurs. They are not quite dinosaurs, but are very close relatives to them, and are the first vertebrates known to fly. Their fossils are very rare because their bones are brittle and not easily preserved."
+        },
+        {
+            "location": "Bird Hall - opposite the Section of Mystery",
+            "clue": "Here’s your next clue: You’ll find me nearby in Bird Hall, hanging out with an ancestor of our feathered friends.",
+            "hint": "Go through the double doors, around the corner, and walk to the top of the ramp and look to your left.",
+            "answer": "Archaeopteryx, discovered in 1860, was once believed to be the earliest known bird. Today, it’s recognized as a significant transitional fossil between dinosaurs and birds."
+        },
+        {
+            "location": "Mummy - The child mummy in Egypt",
+            "clue": "The next item is young, but it’s also very, very old. Look for me in Ancient Egypt by a coffin that shines like gold.",
+            "hint": "Head to Walton Hall of Ancient Egypt and look in the room on the very end.",
+            "answer": "Great work! This child mummy was the first item in the collection at the Museum of Natural History."
+        },
+        {
+            "location": "John White Alexander - the third floor of the Grand Staircase",
+            "clue": "Can you find the parade on the wall of the third floor balcony? I’m hanging out close by.",
+            "hint": "Look on the wall above the staircase.",
+            "answer": "This is the top level of John White Alexander’s masterpiece, The Crowning of Labor. Look around at the white walls: Alexander had planned to extend the mural, but unfortunately passed away before his work was complete."
+        },
+        {
+            "location": "Dec. Arts - The vitrine located just inside the left-hand set of doors to the Bruce Galleries",
+            "clue": "Great work! For your next clue: Shine bright like a diamond—or crystal! Look for me by two dazzling containers in the Bruce Galleries for Decorative Arts and Design on the second floor.",
+            "hint": "The Bruce Galleries are located on the second floor, just off the Grand Staircase.",
+            "answer": "These sparkling decanters were made right here in Pittsburgh for U.S. President James Monroe in 1818. Quite different from our modern water bottles, right?"
+        },
+        {
+            "location": "Lockheed Lounge - The all-metal Lockheed Lounge",
+            "clue": "It’s a bird, it’s a plane, it’s…a metal couch? Look for this lounge—and me!—just around the corner and decide for yourself.",
+            "hint": "Enter the gallery next to the wall of chairs.",
+            "answer": "Nice work! This sleek lounge made history when it appeared in a Madonna music video in 1993. The designer Marc Newson was an Australian surfer—can you see how this lounge chair is similar to a surfboard?"
+        },
+        {
+            "location": "The Grand Staircase - The base of the Grand Staircase, next to the steps",
+            "clue": "Don’t stop and “stair’—head to the bottom of this three-story marble beauty. Can you find me hiding near the original front entrance of the museums?",
+            "hint": "Go downstairs to the first floor.",
+            "answer": "You found me! The original entrance of the museum once faced the stairs, awing visitors as they walked in. This Grand Staircase is now considered to be one of the most beautiful museum staircases in the world."
+        },
+        {
+            "location": "Arab Courier",
+            "clue": "Find a place where lions are the king of the desert, not the jungle—can you find me next to this life-and-death battle with a camel and its rider?",
+            "hint": "Look outside of the hall filled with pillars, which is called the Hall of Sculpture.",
+            "answer": "Great work! You found the Lion Attacking a Dromedary, which was displayed at the Paris International Exposition in 1867. This dramatic diorama is a visitor favorite—every time I see it, I wonder: who wins?"
         }
     ],
     "trivia-csc": [

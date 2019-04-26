@@ -16,61 +16,58 @@ const _ = require("lodash");
 
 function isStampCode(code) {
     // Basically these plus the other special ones
-    const stampCodes = _.map(activities.stamps, (s) => s.messenger_code);
-    return stampCodes.indexOf(code.ref) > -1;
+    const stampCodes = _.map(activities.stamps, (s) => s.stamp_id);
+    console.log(stampCodes);
+    return stampCodes.indexOf(code) > -1;
 }
 
 function isScavengerHuntCode(code) {
-    return code.ref.indexOf('scavengerhunt') > -1;
+    var splitCode = code.split("-"); // scavengerhunt-1
+    if (code.indexOf("scavengerhunt") > -1) {
+        var hunt = activities["scavengerhunt"];
+        if (splitCode[1] <= hunt.length) { return true; }
+    }
+    return false;
 }
-
-function getScanLocation(scannedCode) {
-    const scan = _.find(activities.scan, (s) => s.messenger_code === scannedCode.ref)
-    return utils.isNonNull(scan) ? scan : null;
-}
-
 
 module.exports = {
     scanCode: async (pageId, code) => {
+        console.log("EXpress code:");
+        console.log(code);
         const user = await User.get(pageId);
-        const scannedCode = codes[String(code)];
-        if (utils.isNonNull(scannedCode)) {
+
+        if (utils.isNonNull(code)) {
             let stamp;
             let scavengerhunt;
             let activity;
 
 
-            // 1. Do a location. Set location.
-            const scan = getScanLocation(scannedCode);
-            if (utils.isNonNull(scan) && utils.isNonNull(scan.location)) {
-                await User.setState(pageId, {
-                    location: scan.location,
-                    last_scan_timestamp: (new Date()).getTime()
-                });
-            }
-
-            // 2. Grant stamp if necessary. Set user location.
-            if (isStampCode(scannedCode)) {
+            // 2. Grant stamp. Set user location.
+            if (isStampCode(code)) {
                 try {
-                    stamp = await Stamp.grant(pageId, scannedCode.ref);
-                    return { code: scannedCode, stamp, scan };
+                    stamp = await Stamp.grant(pageId, code);
+                    return { code, type: "stamp", stamp };
                 } catch (err) {
                     stamp = { error: err.message };
-                    return { code: scannedCode, stamp, scan };
+                    return { code, type: "stamp", stamp };
                 }
             }
 
             // 3. Check for scavenger hunt scan
-            if (isScavengerHuntCode(scannedCode)) {
+            if (isScavengerHuntCode(code)) {
+                console.log("IS SCAVENGER HUNT CODE");
+                // Scavenger hunt code urls should be sacvengerhunt-clue#
+                var splitCode = code.split("-");
                 try {
-                    scavengerhunt = await ScavengerHunt.clueFound(pageId, scan);
-                    return { code: scannedCode, scavengerhunt, scan };
+                    scavengerhunt = await ScavengerHunt.clueFound(pageId, splitCode[1]);
+                    return { code, type: "scavengerhunt", scavengerhunt };
                 } catch (err) {
                     scavengerhunt = { error: err.message };
-                    return { code: scannedCode, scavengerhunt, scan };
+                    return { code, type: "scavengerhunt", scavengerhunt };
                 }
             }
-            return { code: scannedCode, scan };
+
+            return { code: scannedCode, scan, type: "unknown" };
 
         }
         return null;
