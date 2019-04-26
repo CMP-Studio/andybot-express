@@ -32,6 +32,7 @@ async function getCalendarEvents() {
             timeMin: timeMin,
             maxResults: 2000,
         });
+        console.log(calendar.data.items);
         return calendar.data.items;
     } catch (err) {
         console.error(err);
