@@ -30,9 +30,8 @@ async function getCalendarEvents() {
             singleEvents: true,
             orderBy: "startTime",
             timeMin: timeMin,
-            maxResults: 2000,
+            maxResults: 1000,
         });
-        console.log(calendar.data.items);
         return calendar.data.items;
     } catch (err) {
         console.error(err);
@@ -41,10 +40,6 @@ async function getCalendarEvents() {
 
 async function getEventDetails(events) {
     return _.uniqBy(_.filter(_.map(events, (e) => {
-        console.log("EVENTT:");
-        console.log(e.summary);
-        console.log(e.start);
-        console.log(e.end);
         const split = striptags(e.description).match(/(ID:)(.*)$/);
         if (utils.isNull(split) || split.length < 3) {
             // tslint:disable-next-line:max-line-length
@@ -75,7 +70,7 @@ async function getEventDetails(events) {
           }  
         // If start time is not today
         // Or this is not stamp earner, then don't show it.
-        if (eventDetails.stamp_id === undefined && isNotToday) {
+        if (eventDetails.stamp !== "yes" && isNotToday) {
             return null;
         }
 
