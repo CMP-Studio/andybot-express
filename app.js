@@ -173,6 +173,20 @@ app.post("/scavengerhunt/getClue", async (req, res) => {
     }
 })
 
+app.post("/scavengerhunt/clearProgress", async (req, res) => {
+    try {
+        const eventsResponse = await Schedule.events();
+        res.json(eventsResponse);
+        const cleared = await ScavengerHunt.clearProgress(req.body.page_id);
+        res.json(cleared);
+    } catch (err){
+        console.error(err);
+        res.json({
+            error: err.message
+        });
+    }
+})
+
 
 app.post("/scavengerhunt/getHint", async (req, res) => {
     try {

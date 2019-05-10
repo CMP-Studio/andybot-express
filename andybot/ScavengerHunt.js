@@ -143,6 +143,19 @@ module.exports = {
             return { hint: scavengerhunt[clueNumber-1].hint };
         }
     },
+
+    clearProgress: async (pageId) => {
+        try {
+            console.log("trying to clear progress for user");
+            console.log(pageId);
+            const recordSaved = await db(tableName).where({ 'fb_page_id': pageId }).del();
+            return true;
+        } catch (err) {
+            console.log("There was an err", err);
+            return [];
+        }
+    }
+
 }
 
 const numClues = scavengerhunt.length;
