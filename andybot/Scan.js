@@ -61,7 +61,7 @@ module.exports = {
                 var splitCode = code.split("-");
                 try {
                     if (splitCode[1] === "onboard") {
-                        return { code, type: "scavengerhunt", { onboard: true } };
+                        return { code, type: "scavengerhunt", scavengerhunt: { onboard: true } };
                     }
                     scavengerhunt = await ScavengerHunt.clueFound(pageId, splitCode[1]);
                     return { code, type: "scavengerhunt", scavengerhunt };
