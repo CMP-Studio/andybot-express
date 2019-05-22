@@ -26,13 +26,14 @@ function isScavengerHuntCode(code) {
     if (code.indexOf("scavengerhunt") > -1) {
         var hunt = activities["scavengerhunt"];
         if (splitCode[1] <= hunt.length) { return true; }
+        else if (splitCode[1] === "onboard") { return true; }
     }
     return false;
 }
 
 module.exports = {
     scanCode: async (pageId, code) => {
-        console.log("EXpress code:");
+        console.log("Express code:");
         console.log(code);
         const user = await User.get(pageId);
 
@@ -59,6 +60,9 @@ module.exports = {
                 // Scavenger hunt code urls should be sacvengerhunt-clue#
                 var splitCode = code.split("-");
                 try {
+                    if (splitCode[1] === "onboard") {
+                        return { code, type: "scavengerhunt", { onboard: true } };
+                    }
                     scavengerhunt = await ScavengerHunt.clueFound(pageId, splitCode[1]);
                     return { code, type: "scavengerhunt", scavengerhunt };
                 } catch (err) {
