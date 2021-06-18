@@ -10,7 +10,7 @@
     "lodash": "^4.17.10",
     "morgan": "^1.9.0",
     "pg": "^7.4.3",
-    "striptags": "^3.1.1"
+    "striptags": "^3.2.0"
   },
   "devDependencies": {
     "messenger-codes": "https://github.com/CMP-Studio/messenger-codes.git",
